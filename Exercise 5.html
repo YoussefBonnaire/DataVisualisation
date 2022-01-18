@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src='https://d3js.org/d3.v7.min.js'></script>
+<h1>Exercise 5</h1>
+<body>
+</body>
+<script>
+    var bodyElement = d3.select("body");
+    var div = bodyElement.append("div");
+    div.text("Hello World!");
+    // same as
+    d3.select("body").append("div").text("Hello World!").style('color', 'green');
+</script>
+</html>

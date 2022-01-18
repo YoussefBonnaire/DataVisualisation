@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src='https://d3js.org/d3.v7.min.js'></script>
+<h1>Exercise 6</h1>
+<div></div>
+<div></div>
+<div></div>
+<script>
+    let otherdata = [{name: 'test', val: 1, color: 'red'},
+        {name: 'other', val: 2, color: 'green'},
+        {name: 'b', val: 3, color: 'blue'}];
+    let paragraph = d3.select("body")
+        .selectAll("div")
+        .data(otherdata)
+        .text(function (d, i) {
+            console.log("d.name: " + d.name);
+            console.log("d.val: " + d.val);
+            console.log("i: " + i);
+            console.log("this: " + this);
+            return 'Color: ' + d.color; // return value is used to set the 'text'
+        }).style('color', d => d.color);
+</script>
+</html>

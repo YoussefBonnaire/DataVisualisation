@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src='https://d3js.org/d3.v7.min.js'></script>
+<h1>Exercise 4</h1>
+<body>
+</body>
+<script>
+    for(let i=1;i<=5;i++) {
+        d3.select('body').append('div').attr('class', 'under-five').attr('id', i).text(i).style('color', 'red')
+    }
+
+    for(let i=6;i<=10;i++) {
+        d3.select('body').append('div').attr("class", 'over-five').text(i).style('color', 'green')
+    }
+
+    console.log(d3.selectAll('div'))
+    d3.select('div').text('start').style('color', 'purple')
+    d3.selectAll('.over-five').text('too many').style('green', 'purple')
+
+</script>
+</html>
