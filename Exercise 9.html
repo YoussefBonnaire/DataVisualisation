@@ -8,6 +8,16 @@ Mrs: <span id="mrs"></span><br/>
 Male: <span id="male"></span><br/>
 Female: <span id="female"></span><br/>
 Sum of Ages <span id="age"></span><br/>
+Average Age <span id="av_age"></span><br/>
+Passengers in 1st class: <span id="st"></span><br/>
+Passengers in 2nd class: <span id="nd"></span><br/>
+Passengers in 3rd class: <span id="rd"></span><br/>
+Total fare for 1st class: <span id="fare_st"></span><br/>
+Total fare for 2nd class: <span id="fare_nd"></span><br/>
+Total fare for 3rd class: <span id="fare_rd"></span><br/>
+Total fare for 1st class: <span id="av_fare_st"></span><br/>
+Total fare for 2nd class: <span id="av_fare_nd"></span><br/>
+Total fare for 3rd class: <span id="av_fare_rd"></span><br/>
 </body>
 
 <script>
@@ -19,19 +29,65 @@ Sum of Ages <span id="age"></span><br/>
     894,2,"Myles, Mr. Thomas Francis",male,62,0,0,240276,9.6875,,Q
     895,3,"Wirz, Mr. Albert",male,27,0,0,315154,8.6625,,S
     */
-    var mr_count = 0;
-    var mrs_count = 0;
-    var male_count = 0;
-    var female_count = 0;
-    var age_total = 0;
-    data = d3.csv(titaniccsv, function (data) {
-    }).then(function () {
-        mr_count += Name.toLowerCase().includes("mr.");
-        mrs_count += Name.toLowerCase().includes("mrs.");
-        male_count += Sex.toLowerCase() === "male";
-        female_count += Sex.toLowerCase() === "female";
-        age_total += +Age;
-    })
-    console.log(mr_count)
+    let mr_count = 0;
+    let mrs_count = 0;
+    let male_count = 0;
+    let female_count = 0;
+    let passengers = 0;
+    let age_total = 0;
+    let first_class = 0;
+    let tot_fare_first = 0;
+    let second_class = 0;
+    let tot_fare_second = 0;
+    let third_class = 0;
+    let tot_fare_third = 0;
+
+    data = d3.csv(titaniccsv).then(data => {
+        data.forEach(
+            d => {
+                countOccurences(d)
+            });
+        d3.select('#mr').text(mr_count)
+        d3.select('#mrs').text(mrs_count)
+        d3.select('#male').text(male_count)
+        d3.select('#female').text(female_count)
+        d3.select('#age').text(age_total)
+        d3.select('#av_age').text((age_total / passengers).toFixed(2))
+        d3.select('#st').text(first_class)
+        d3.select('#nd').text(second_class)
+        d3.select('#rd').text(third_class)
+        d3.select('#fare_st').text(tot_fare_first.toFixed(2))
+        d3.select('#fare_nd').text(tot_fare_second.toFixed(2))
+        d3.select('#fare_rd').text(tot_fare_third.toFixed(2))
+        d3.select('#av_fare_st').text((tot_fare_first / first_class).toFixed(2))
+        d3.select('#av_fare_nd').text((tot_fare_second / second_class).toFixed(2))
+        d3.select('#av_fare_rd').text((tot_fare_third / third_class).toFixed(2))
+
+    });
+
+    function countOccurences(d) {
+        if (d.Name.toLowerCase().includes("mr.")) {
+            mr_count += 1;
+        } else if (d.Name.toLowerCase().includes("mrs.")) {
+            mrs_count += 1;
+        }
+        if (d.Sex.toLowerCase() === "male") {
+            male_count += 1;
+        } else if (d.Sex.toLowerCase() === "female") {
+            female_count += 1;
+        }
+        if (d.Pclass === "1") {
+            first_class += 1;
+            tot_fare_first += +d.Fare
+        } else if (d.Pclass === "2") {
+            second_class += 1;
+            tot_fare_second += +d.Fare
+        } else if (d.Pclass === "3") {
+            third_class += 1;
+            tot_fare_third += +d.Fare
+        }
+        passengers += 1;
+        age_total += +d.Age;
+    }
 </script>
 </html>
