@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<script , src='https://d3js.org/d3.v7.min.js'></script>
+<!--<script src='Exercise 10.html'></script>-->
+<h1>Exercise 14 & 15</h1>
+<body>
+
+</body>
+<style>
+    svg rect {
+        fill: blue;
+    }
+
+    svg text {
+        fill: white;
+        font: 10px sans-serif;
+        text-anchor: end;
+    }
+</style>
+<script>
+    let heartfailurecsv = 'https://raw.githubusercontent.com/akmand/datasets/master/heart_failure.csv';
+    /*
+    age,anaemia,creatinine_phosphokinase,diabetes,ejection_fraction,high_blood_pressure,platelets,serum_creatini
+    ne,serum_sodium,sex,smoking,time,DEATH_EVENT
+    75,0,582,0,20,1,265000,1.9,130,1,0,4,1
+    55,0,7861,0,38,0,263358.03,1.1,136,1,0,6,1*/
+    age_bins = [0, 0, 0, 0];
+
+    var width = 400;
+    var scaleFactor = 2;
+    var barHeight = 20;
+
+    var graph = d3.select("body")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", barHeight * age_bins.length);
+    d3.csv(heartfailurecsv).then(data => {
+        data.forEach(
+            da => GetBins(da)
+        )
+        var bar = graph.selectAll("g")
+            .data(age_bins)
+            .enter()
+            .append("g")
+            .attr("transform", function (d, i) {
+                return "translate(0," + i * barHeight + ")";
+            });
+        bar.append("rect")
+            .attr("width", function (d) {
+                return d * scaleFactor;
+            })
+            .attr("height", barHeight - 1)
+            .style('fill', function (d) {
+                if (d > 100) {
+                    return 'red'
+                } else {
+                    return 'green'
+                }
+            });
+        bar.append("text")
+            .attr("x", function (d) {
+                return (d * scaleFactor);
+            })
+            .attr("y", barHeight / 2)
+            .attr("dy", ".5em")
+            .text(function (d) {
+                return d;
+            }).style('fill', function (d) {
+            if (d < 140) {
+                return 'yellow'
+            } else {
+                return 'purple'
+            }
+        });
+    });
+
+    function GetBins(d) {
+        if (d.age >= 1 && d.age <= 30) {
+            age_bins[0] += 1;
+        }
+        if (d.age >= 31 && d.age <= 40) {
+            age_bins[1] += 1;
+        }
+        if (d.age >= 41 && d.age <= 60) {
+            age_bins[2] += 1;
+        }
+        if (d.age >= 61 && d.age <= 100) {
+            age_bins[3] += 1;
+        }
+    }
+</script>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <script src='https://d3js.org/d3.v7.min.js'></script>
-<h1>Exercise 12</h1>
+<h1>Exercise 13 (not completed)</h1>
 <body>
 
 </body>
@@ -16,7 +16,7 @@
 
     function render(d) {
         if (d.shape === 'rect') {
-            svg.append(d.shape)
+            svg.append('rect')
                 .attr('x', d.cx_pos)
                 .attr('y', d.cy_pos)
                 .attr('width', d.width)
@@ -53,29 +53,9 @@
         }
     )
 
+    // d3.csv(file).then(data => {
+    //
+    // })
 
-    //Create and append rectangle element
-    svg.append("rect")
-        .attr("x", 0)
-        .attr("y", 0)
-        .attr("width", 200)
-        .attr("height", 100)
-        .attr("fill", 'pink');
-    //Append circle
-    svg.append("circle")
-        .attr("cx", 250)
-        .attr("cy", 50)
-        .attr("r", 50);
-    svg.append("ellipse")
-        .attr("cx", 250)
-        .attr("cy", 50)
-        .attr("rx", 150)
-        .attr("ry", 50);
-    //Create and append text element into group
-    svg.append("text")
-        .attr("x", 150)
-        .attr("y", 50)
-        .attr("stroke", "#fff")
-        .text("This is some text!");
 </script>
 </html>
