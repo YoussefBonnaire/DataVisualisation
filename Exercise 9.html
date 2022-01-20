@@ -42,7 +42,7 @@ Total fare for 3rd class: <span id="av_fare_rd"></span><br/>
     let third_class = 0;
     let tot_fare_third = 0;
 
-    data = d3.csv(titaniccsv).then(data => {
+    data_1 = d3.csv(titaniccsv).then(data => {
         data.forEach(
             d => {
                 countOccurences(d)

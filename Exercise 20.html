@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 20</title>
+</head>
+<body>
+<h1>Exercise 20</h1>
+</body>
+<script src='https://d3js.org/d3.v7.min.js'></script>
+<script>
+    const width = 400;
+    const height = 300;
+    var data = [10, 15, 20, 25, 30];
+    var svg = d3.select("body")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    var xscale = d3.scaleLinear()
+        .domain([0, d3.max(data)])
+        .range([0, width - 100]);
+
+    var yscale = d3.scaleLinear()
+        .domain([0, d3.max(data)])
+        .range([height / 2, 0]);
+
+    var x_axis_b = d3.axisBottom()
+        .scale(xscale);
+    var x_axis_t = d3.axisTop()
+        .scale(xscale);
+    var xAxisTranslate_b = height / 2 + 20;
+    var xAxisTranslate_t = 20;
+    svg.append("g")
+        .attr("transform", "translate(50, " + xAxisTranslate_b + ")")
+        .call(x_axis_b)
+    svg.append("g")
+        .attr("transform", "translate(50, " + xAxisTranslate_t + ")")
+        .call(x_axis_t).style('color', 'blue')
+
+    var y_axis_l = d3.axisLeft()
+        .scale(yscale);
+    var y_axis_r = d3.axisRight()
+        .scale(yscale);
+    svg.append("g")
+        .attr("transform", "translate(50, 20)")
+        .call(y_axis_l);
+    svg.append("g")
+        .attr("transform", "translate(" + (width - 100 + 50) + ", 20)")
+        .call(y_axis_r).style('color', 'blue');
+
+</script>
+</html>

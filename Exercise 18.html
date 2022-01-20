@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Exercise 18</title>
-
 </head>
 <body>
 <h1>Exercise 18</h1>
@@ -14,20 +13,24 @@
     const barHeight = 20;
     const margin = 1;
 
+    var scale = d3.scaleLinear()
+        .range([50, 500]);
+
+    var svg = d3.select("body")
+        .append("svg")
+        .attr("width", width)
 
     newdata = 'Exercise 18.csv'
     d3.csv(newdata).then(data => {
-        console.log(data)
-        var scale = d3.scaleLinear()
-            .domain([d3.min(data), d3.max(data)])
-            .range([50, 500]);
+        var numeric_d = data.map(function (d) {
+            return +d.values
+        })
 
-        var svg = d3.select("body")
-            .append("svg")
-            .attr("width", width)
-            .attr("height", barHeight * data.length);
+        scale.domain([d3.min(numeric_d), d3.max(numeric_d)]);
+        svg.attr("height", barHeight * data.length);
+
         var g = svg.selectAll("g")
-            .data(data)
+            .data(numeric_d)
             .enter()
             .append("g")
             .attr("transform", function (d, i) {
@@ -35,7 +38,6 @@
             });
         g.append("rect")
             .attr("width", function (d) {
-                console.log(scale(d))
                 return scale(d);
             })
             .attr('fill', 'blue')

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 25</title>
+</head>
+<body>
+<h1>Exercise 25</h1>
+</body>
+<script src='https://d3js.org/d3.v7.min.js'></script>
+<script>
+    // Set Dimensions
+    const xSize = 600;
+    const ySize = 600;
+    const margin = 40;
+    const xMax = xSize - margin * 2;
+    const yMax = ySize - margin * 2;
+
+    // Append SVG Object to the Page
+    const svg = d3.select("body")
+        .append("svg")
+        .attr('width', xSize)
+        .attr('height', ySize)
+        .append("g")
+        .attr("transform", "translate(" + margin + "," + margin + ")");
+    // X Axis
+    const x = d3.scaleLinear()
+        .range([0, xMax]);
+    // bottom
+    svg.append("g")
+        .attr("transform", "translate(0," + yMax + ")")
+        .call(d3.axisBottom(x))
+    // .attr('color', 'green'); // make bottom axis green
+    // top
+    svg.append("g")
+        .call(d3.axisTop(x));
+    // Y Axis
+    const y = d3.scaleLinear()
+        .range([yMax, 0]);
+    // left y axis
+    svg.append("g")
+        .call(d3.axisLeft(y));
+    // right y axis
+    svg.append("g")
+        .attr("transform", `translate(${yMax},0)`)
+        .call(d3.axisRight(y));
+
+    file1 = 'Exercise 23.json'
+    d3.json(file1).then(
+        data => DrawWave(data)
+    )
+    file2 = 'Exercise 24.1.json'
+    d3.json(file2).then(
+        data => DrawWave(data)
+    )
+    file3 = 'Exercise 24.2.json'
+    d3.json(file3).then(
+        data => DrawWave(data)
+    )
+
+    function DrawWave(shape_data) {
+
+        // Create Random Points
+
+        // Get the 'limits' of the data - the full extent (mins and max)
+        // so the plotted data fits perfectly
+        const xExtent = d3.extent(shape_data, d => {
+            return d.x
+        });
+        const yExtent = d3.extent(shape_data, d => {
+            return d.y
+        });
+        x.domain([xExtent[0], xExtent[1]])
+        y.domain([yExtent[0], yExtent[1]])
+        // Add points
+        svg.selectAll("dot")
+            .data(shape_data)
+            .enter()
+            .append("circle")
+            .attr("cx", function (d) {
+                return x(d.x)
+            })
+            .attr("cy", function (d) {
+                return y(d.y)
+            })
+            .attr("r", 5)
+            .style("fill", "red");
+        // Add the line
+        if (shape_data[0].y === 1) {
+            svg.append("path")
+                .datum(shape_data)
+                .attr("fill", "none")
+                .attr("stroke", "green")
+                .attr("stroke-width", 1.5)
+                .attr("d", d3.line()
+                    .x(function (d) {
+                        return x(d.x)
+                    })
+                    .y(function (d) {
+                        return y(d.y)
+                    })
+                );
+        } else {
+            svg.append("path")
+                .datum(shape_data)
+                .attr("fill", "none")
+                .attr("stroke", "steelblue")
+                .attr("stroke-width", 1.5)
+                .attr("d", d3.line()
+                    .x(function (d) {
+                        return x(d.x)
+                    })
+                    .y(function (d) {
+                        return y(d.y)
+                    })
+                );
+        }
+    }
+</script>
+</html>
