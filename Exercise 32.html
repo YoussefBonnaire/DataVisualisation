@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 32</title>
+</head>
+<body>
+<h1>Exercise 32</h1>
+</body>
+<script src='https://d3js.org/d3.v7.min.js' type='text/javascript'></script>
+<script>
+    var body = d3.select('body');
+    var data = d3.range(5);
+    var myColor3 = d3.scaleOrdinal().domain(data).range(["gold", "blue", "green", "yellow"]);
+    for (let i = 0; i < 20; i++) {
+        body.append('div').style('background-color', myColor3(i));
+    }
+    body.append('br');
+    
+    // Set Dimensions
+    const xSize = 600;
+    const ySize = 600;
+    const margin = 40;
+    const xMax = xSize - margin * 2;
+    const yMax = ySize - margin * 2;
+
+    file = 'Exercise 23.json'
+    d3.json(file).then(
+        data => DrawWave(data)
+    )
+
+    function DrawWave(shape_data) {
+        // Get the 'limits' of the data - the full extent (mins and max)
+        // so the plotted data fits perfectly
+        const xExtent = d3.extent(shape_data, d => {
+            return d.x
+        });
+        const yExtent = d3.extent(shape_data, d => {
+            return d.y
+        });
+
+        // Choose color pattern
+        var myColor = d3.scaleOrdinal().domain(data).range(["gold", "blue", "green", "yellow"]);
+
+        // Append SVG Object to the Page
+        const svg = d3.select("body")
+            .append("svg")
+            .attr('width', xSize)
+            .attr('height', ySize)
+            .append("g")
+            .attr("transform", "translate(" + margin + "," + margin + ")");
+
+        svg.append('image')
+            .attr('xlink:href', 'https://i.pinimg.com/736x/ec/87/92/ec87923355713c669c81e0fd9372ba85.jpg')
+            .attr('width', xMax)
+            .attr('height', yMax)
+            .attr('x', 0)
+            .attr('y', 0);
+        // X Axis
+        const x = d3.scaleLinear()
+            .domain([xExtent[0], xExtent[1]])
+            .range([0, xMax]);
+
+        // bottom
+        svg.append("g")
+            .attr("transform", "translate(0," + yMax + ")")
+            .call(d3.axisBottom(x))
+        // .attr('color', 'green'); // make bottom axis green
+
+        // top
+        svg.append("g")
+            .call(d3.axisTop(x));
+
+        // Y Axis
+        const y = d3.scaleLinear()
+            .domain([yExtent[0], yExtent[1]])
+            .range([yMax, 0]);
+
+        // left y axis
+        svg.append("g")
+            .call(d3.axisLeft(y));
+
+        // right y axis
+        svg.append("g")
+            .attr("transform", `translate(${yMax},0)`)
+            .call(d3.axisRight(y));
+        // Set the gradient
+        svg.append("linearGradient")
+            .attr("id", "line-gradient")
+            .attr("gradientUnits", "userSpaceOnUse")
+            .attr("x1", 0)
+            .attr("y1", y(yMax))
+            .attr("x2", 0)
+            .attr("y2", y(-1))
+            .selectAll("stop")
+            .data(shape_data)
+            .enter()
+            .append("stop")
+            .attr("offset", function (d) {
+                return d.y;
+            })
+            .attr("stop-color", function (d) {
+                return myColor(y(d.y));
+            });
+
+        // Add the line
+        svg.append("path")
+            .datum(shape_data)
+            .attr("fill", "none")
+            .attr('stroke', "url(#line-gradient)")
+            .attr("stroke-width", 1.5)
+            .attr("d", d3.line()
+                .x(function (d) {
+                    return x(d.x)
+                })
+                .y(function (d) {
+                    return y(d.y)
+                })
+            );
+
+    }
+
+</script>
+</html>

@@ -19,27 +19,89 @@
 </style>
 <script>
     var body = d3.select('body');
-    var myColor0 = d3.scaleLinear().domain([1, 10]).range(["white", "blue"]);
-    var myColor1 = d3.scaleSequential().domain([1, 10]).interpolator(d3.interpolatePuRd);
     var myColor2 = d3.scaleSequential().domain([1, 10]).interpolator(d3.interpolateViridis);
-    /*
-    d3.range(5)
-    [0, 1, 2, 3, 4]
-    */
     var data = d3.range(5);
-    var myColor3 = d3.scaleOrdinal().domain(data).range(["gold", "blue", "green", "yellow"]);
-    var myColor4 = d3.scaleOrdinal().domain(data).range(d3.schemeSet3);
-    var cols = [myColor0,
-        myColor1,
-        myColor2,
-        myColor3,
-        myColor4];
+    var cols = [myColor2];
     for (let k = 0; k < cols.length; k++) {
         for (let i = 0; i < 20; i++) {
             body.append('div').style('background-color', cols[k](i));
         }
         body.append('br');
     }
-    console.log('ready..');
+
+    const width = 550;
+    const barHeight = 20;
+    const margin = 1;
+
+    var scale = d3.scaleLinear()
+        .range([50, 500]);
+
+    newdata = 'Exercise 18.csv'
+    DisplayCsv(newdata)
+
+    function DisplayCsv(file) {
+        d3.csv(file).then(data => {
+            var numeric_d = data.map(function (d) {
+                return +d.values
+            })
+
+            var myColor = d3.scaleSequential().domain([d3.min(numeric_d), d3.max(numeric_d)]).interpolator(d3.interpolateViridis);
+
+            scale.domain([d3.min(numeric_d), d3.max(numeric_d)]);
+
+            var yscale = d3.scaleLinear()
+                .domain([0, d3.max(numeric_d)])
+                .range([barHeight * data.length, 0]);
+            var xscale = d3.scaleLinear()
+                .domain([0, d3.max(numeric_d)])
+                .range([0, 500]);
+
+            var svg = d3.select("body")
+                .append("svg")
+                .attr("width", width)
+                .attr("height", barHeight * data.length + 40);
+
+            var g = svg.selectAll("g")
+                .data(numeric_d)
+                .enter()
+                .append("g")
+                .attr("transform", function (d, i) {
+                    return "translate(10," + i * barHeight + ")";
+                });
+
+            var x_axis = d3.axisBottom()
+                .scale(xscale);
+            svg.append("g")
+                .attr("transform", "translate(10, " + (barHeight * data.length) + ")")
+                .call(x_axis)
+
+            var y_axis = d3.axisLeft()
+                .scale(yscale);
+            svg.append('g')
+                .attr("transform", "translate(10, 0)")
+                .call(y_axis);
+
+
+            g.append("rect")
+                .attr("width", function (d) {
+                    return scale(d);
+                })
+                .attr('fill', 'blue')
+                .attr("height", barHeight - margin)
+                .style('fill', function (d) {
+                    return myColor(d);
+                })
+            g.append("text")
+                .attr("x", function (d) {
+                    return (scale(d));
+                })
+                .attr("y", barHeight / 2)
+                .attr("dy", ".35em")
+                .style('text-anchor', 'end')
+                .text(function (d) {
+                    return d;
+                });
+        })
+    }
 </script>
 </html>

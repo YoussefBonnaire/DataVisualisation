@@ -14,9 +14,12 @@
         .style("border", '1px solid green');
     file = 'exercise 12.csv'
 
-    function render(d) {
+    function Render(d) {
+        const shapes = svg.selectAll(d.shape).data([1]);
         if (d.shape === 'rect') {
-            svg.append('rect')
+            shapes
+                .enter()
+                .append(d.shape)
                 .attr('x', d.cx_pos)
                 .attr('y', d.cy_pos)
                 .attr('width', d.width)
@@ -24,14 +27,18 @@
                 .attr('fill', d.color);
         }
         if (d.shape === 'circle') {
-            svg.append(d.shape)
+            shapes
+                .enter()
+                .append(d.shape)
                 .attr("cx", d.cx_pos)
                 .attr("cy", d.cy_pos)
                 .attr("r", d.width / 2)
                 .attr('fill', d.color);
         }
         if (d.shape === 'ellipse') {
-            svg.append(d.shape)
+            shapes
+                .enter()
+                .append(d.shape)
                 .attr("cx", d.cx_pos)
                 .attr("cy", d.cy_pos)
                 .attr("rx", d.width)
@@ -39,7 +46,9 @@
                 .attr('fill', d.color);
         }
         if (d.shape === 'line') {
-            svg.append(d.shape)
+            shapes
+                .enter()
+                .append(d.shape)
                 .attr("x1", d.cx_pos)
                 .attr("x2", +d.cx_pos + +d.width)
                 .attr("y1", d.cy_pos)
@@ -48,14 +57,35 @@
         }
     }
 
-    d3.csv(file, function (data) {
-            render(data)
-        }
-    )
+    function Render_Broken(d) {
+        const shapes = svg.selectAll(d.shape)
+            .data(d);
+        shapes
+            .enter()
+            .append(d.shape)
+            .attr('x', d.cx_pos)
+            .attr('y', d.cy_pos)
+            .attr("cx", d.cx_pos)
+            .attr("cy", d.cy_pos)
+            .attr("r", d.width / 2)
+            .attr("rx", d.width)
+            .attr("ry", d.height)
+            .attr("x1", d.cx_pos)
+            .attr("x2", +d.cx_pos + +d.width)
+            .attr("y1", d.cy_pos)
+            .attr("y2", +d.cy_pos + +d.height)
+            .attr('width', d.width)
+            .attr('height', d.height)
+            .attr('fill', d.color)
+            .attr('stroke', d.color);
+        shapes.exit().remove()
+    }
 
-    // d3.csv(file).then(data => {
-    //
-    // })
+    d3.csv(file, function (data) {
+            Render(data);
+        }
+    ).then(data => Render_Broken(data))
+
 
 </script>
 </html>
