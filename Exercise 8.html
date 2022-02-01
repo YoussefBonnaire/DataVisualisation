@@ -10,12 +10,12 @@
         .data(myData)
         .enter()
         .append('span')
-        .text(function (d, i) {
+        .text(function (d) {
             return d;
         })
-        .style('color', function (d, i) {
+        .style('color', function (d) {
             console.log(typeof (d))
-            if (typeof (d) == 'string') {
+            if (typeof (d) == 'string') { // Selects objects of type string to change to blue
                 return 'blue'
             } else {
                 return 'green'

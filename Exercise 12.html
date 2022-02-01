@@ -14,6 +14,7 @@
         .style("border", '1px solid green');
     file = 'exercise 12.csv'
 
+    // Renders the shape of a single data point
     function render(d) {
         if (d.shape === 'rect') {
             svg.append(d.shape)
@@ -54,28 +55,28 @@
     )
 
 
-    //Create and append rectangle element
-    svg.append("rect")
-        .attr("x", 0)
-        .attr("y", 0)
-        .attr("width", 200)
-        .attr("height", 100)
-        .attr("fill", 'pink');
-    //Append circle
-    svg.append("circle")
-        .attr("cx", 250)
-        .attr("cy", 50)
-        .attr("r", 50);
-    svg.append("ellipse")
-        .attr("cx", 250)
-        .attr("cy", 50)
-        .attr("rx", 150)
-        .attr("ry", 50);
-    //Create and append text element into group
-    svg.append("text")
-        .attr("x", 150)
-        .attr("y", 50)
-        .attr("stroke", "#fff")
-        .text("This is some text!");
+    // //Create and append rectangle element
+    // svg.append("rect")
+    //     .attr("x", 0)
+    //     .attr("y", 0)
+    //     .attr("width", 200)
+    //     .attr("height", 100)
+    //     .attr("fill", 'pink');
+    // //Append circle
+    // svg.append("circle")
+    //     .attr("cx", 250)
+    //     .attr("cy", 50)
+    //     .attr("r", 50);
+    // svg.append("ellipse")
+    //     .attr("cx", 250)
+    //     .attr("cy", 50)
+    //     .attr("rx", 150)
+    //     .attr("ry", 50);
+    // //Create and append text element into group
+    // svg.append("text")
+    //     .attr("x", 150)
+    //     .attr("y", 50)
+    //     .attr("stroke", "#fff")
+    //     .text("This is some text!");
 </script>
 </html>

@@ -17,16 +17,15 @@
     const yMax = ySize - margin * 2;
     const numPoints = 100;
     const data = [];
+
+    // Create Random Points
     for (let i = 0; i < numPoints; i++) {
-        data.push({x: i / 100, y: Math.tan(6.2 * i / 100)});
+        data.push({x: i / 100, y: Math.cos(6.2 * i / 100)});
     }
     console.log(data)
     DrawWave(data)
 
     function DrawWave(shape_data) {
-
-        // Create Random Points
-
         // Get the 'limits' of the data - the full extent (mins and max)
         // so the plotted data fits perfectly
         const xExtent = d3.extent(shape_data, d => {

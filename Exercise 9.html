@@ -29,6 +29,8 @@ Total fare for 3rd class: <span id="av_fare_rd"></span><br/>
     894,2,"Myles, Mr. Thomas Francis",male,62,0,0,240276,9.6875,,Q
     895,3,"Wirz, Mr. Albert",male,27,0,0,315154,8.6625,,S
     */
+
+    // initializes variables
     let mr_count = 0;
     let mrs_count = 0;
     let male_count = 0;
@@ -45,8 +47,10 @@ Total fare for 3rd class: <span id="av_fare_rd"></span><br/>
     data_1 = d3.csv(titaniccsv).then(data => {
         data.forEach(
             d => {
+                // apply function on single datapoints
                 countOccurences(d)
             });
+        // Populate page
         d3.select('#mr').text(mr_count)
         d3.select('#mrs').text(mrs_count)
         d3.select('#male').text(male_count)
@@ -65,6 +69,7 @@ Total fare for 3rd class: <span id="av_fare_rd"></span><br/>
 
     });
 
+    // Counts occurences of specific features in data
     function countOccurences(d) {
         if (d.Name.toLowerCase().includes("mr.")) {
             mr_count += 1;

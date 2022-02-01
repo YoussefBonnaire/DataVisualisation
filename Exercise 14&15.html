@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<script , src='https://d3js.org/d3.v7.min.js'></script>
+<script src='https://d3js.org/d3.v7.min.js'></script>
 <!--<script src='Exercise 10.html'></script>-->
 <h1>Exercise 14 & 15</h1>
 <body>
@@ -38,6 +38,7 @@
         data.forEach(
             da => GetBins(da)
         )
+        // Populate bars with data
         var bar = graph.selectAll("g")
             .data(age_bins)
             .enter()
@@ -57,6 +58,7 @@
                     return 'green'
                 }
             });
+
         bar.append("text")
             .attr("x", function (d) {
                 return (d * scaleFactor);
@@ -66,7 +68,7 @@
             .text(function (d) {
                 return d;
             }).style('fill', function (d) {
-            if (d < 140) {
+            if (d < 140) { // Specifies ranges for text color based on count
                 return 'yellow'
             } else {
                 return 'purple'
@@ -74,6 +76,7 @@
         });
     });
 
+    // Gathers information for specified bin ranges
     function GetBins(d) {
         if (d.age >= 1 && d.age <= 30) {
             age_bins[0] += 1;

@@ -27,6 +27,7 @@
 
     var x_axis_b = d3.axisBottom()
         .scale(xscale);
+    // Initialise top axis
     var x_axis_t = d3.axisTop()
         .scale(xscale);
     var xAxisTranslate_b = height / 2 + 20;
@@ -34,17 +35,20 @@
     svg.append("g")
         .attr("transform", "translate(50, " + xAxisTranslate_b + ")")
         .call(x_axis_b)
+    // add top axis
     svg.append("g")
         .attr("transform", "translate(50, " + xAxisTranslate_t + ")")
         .call(x_axis_t).style('color', 'blue')
 
     var y_axis_l = d3.axisLeft()
         .scale(yscale);
+    // Initialise right axis
     var y_axis_r = d3.axisRight()
         .scale(yscale);
     svg.append("g")
         .attr("transform", "translate(50, 20)")
         .call(y_axis_l);
+    // add right axis
     svg.append("g")
         .attr("transform", "translate(" + (width - 100 + 50) + ", 20)")
         .call(y_axis_r).style('color', 'blue');

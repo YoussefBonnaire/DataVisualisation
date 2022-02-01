@@ -5,10 +5,11 @@
 <body>
 </body>
 <script>
+    // loop creating first five divs with added 'under-five' property for added functionality
   for(let i=1;i<=5;i++) {
     d3.select('body').append('div').text(i).property('Under-five', true).style('color', 'red')
   }
-
+    // loop creating latter five divs with added 'under-five' property for added functionality
   for(let i=6;i<=10;i++) {
     d3.select('body').append('div').text(i).property('Under-five', false).style('color', 'green')
   }

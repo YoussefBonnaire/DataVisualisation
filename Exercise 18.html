@@ -12,10 +12,12 @@
     const width = 500;
     const barHeight = 20;
     const margin = 1;
+    // Initialises Scalar
 
     var scale = d3.scaleLinear()
         .range([50, 500]);
 
+    // Initiliase svg
     var svg = d3.select("body")
         .append("svg")
         .attr("width", width)
@@ -25,10 +27,12 @@
         var numeric_d = data.map(function (d) {
             return +d.values
         })
-
+        // specifies scale based on data
         scale.domain([d3.min(numeric_d), d3.max(numeric_d)]);
+        // specifies svg height based on data
         svg.attr("height", barHeight * data.length);
 
+        // Selects svg and enters our data to g
         var g = svg.selectAll("g")
             .data(numeric_d)
             .enter()
@@ -36,6 +40,8 @@
             .attr("transform", function (d, i) {
                 return "translate(0," + i * barHeight + ")";
             });
+
+        // Creates bars
         g.append("rect")
             .attr("width", function (d) {
                 return scale(d);
@@ -43,12 +49,14 @@
             .attr('fill', 'blue')
             .attr("height", barHeight - margin)
             .style('fill', function (d) {
-                if (d <= 100) {
+                if (d <= 100) { // changes bar color based on numeric value of data
                     return 'green'
                 } else if (d >= 500) {
                     return 'red'
                 }
             })
+
+        // Adds text
         g.append("text")
             .attr("x", function (d) {
                 return (scale(d));

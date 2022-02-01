@@ -46,9 +46,9 @@
             })
 
             var myColor = d3.scaleSequential().domain([d3.min(numeric_d), d3.max(numeric_d)]).interpolator(d3.interpolateViridis);
-
+            // Set bar scale with data
             scale.domain([d3.min(numeric_d), d3.max(numeric_d)]);
-
+            // Initialise axis scales
             var yscale = d3.scaleLinear()
                 .domain([0, d3.max(numeric_d)])
                 .range([barHeight * data.length, 0]);
@@ -56,11 +56,13 @@
                 .domain([0, d3.max(numeric_d)])
                 .range([0, 500]);
 
+            // Create SVG
             var svg = d3.select("body")
                 .append("svg")
                 .attr("width", width)
                 .attr("height", barHeight * data.length + 40);
 
+            // Initialise graph
             var g = svg.selectAll("g")
                 .data(numeric_d)
                 .enter()
@@ -69,19 +71,20 @@
                     return "translate(10," + i * barHeight + ")";
                 });
 
+            // Bottom axis
             var x_axis = d3.axisBottom()
                 .scale(xscale);
             svg.append("g")
                 .attr("transform", "translate(10, " + (barHeight * data.length) + ")")
                 .call(x_axis)
-
+            // Left axis
             var y_axis = d3.axisLeft()
                 .scale(yscale);
             svg.append('g')
                 .attr("transform", "translate(10, 0)")
                 .call(y_axis);
 
-
+            // Create bars
             g.append("rect")
                 .attr("width", function (d) {
                     return scale(d);
@@ -91,6 +94,7 @@
                 .style('fill', function (d) {
                     return myColor(d);
                 })
+            // Add labels
             g.append("text")
                 .attr("x", function (d) {
                     return (scale(d));

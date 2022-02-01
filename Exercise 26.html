@@ -77,6 +77,7 @@
                 return y(d.y)
             })
         );
+    // Add the circles
     svg.selectAll("dot")
         .data(data_1)
         .enter()
@@ -89,7 +90,7 @@
         })
         .attr("r", 5)
         .style("fill", "red");
-
+    // Add the line
     svg.append("path")
         .datum(data_2)
         .attr("fill", "none")
@@ -103,12 +104,13 @@
                 return y(d.y)
             })
         );
+    // Add triangles
     svg.selectAll("dot")
         .data(data_2)
         .enter()
         .append("path")
         .attr('d', d3.symbol().type(d3.symbolTriangle).size(50))
-        .attr('transform', function (d, i) {
+        .attr('transform', function (d) {
             return 'translate(' + x(d.x) + ',' + y(d.y) + ')';
         })
         .style("fill", "red");

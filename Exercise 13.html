@@ -58,26 +58,27 @@
     }
 
     function Render_Broken(d) {
-        const shapes = svg.selectAll(d.shape)
+        const shapes = svg.selectAll('shape')
             .data(d);
+        
         shapes
             .enter()
-            .append(d.shape)
-            .attr('x', d.cx_pos)
-            .attr('y', d.cy_pos)
-            .attr("cx", d.cx_pos)
-            .attr("cy", d.cy_pos)
-            .attr("r", d.width / 2)
-            .attr("rx", d.width)
-            .attr("ry", d.height)
-            .attr("x1", d.cx_pos)
-            .attr("x2", +d.cx_pos + +d.width)
-            .attr("y1", d.cy_pos)
-            .attr("y2", +d.cy_pos + +d.height)
-            .attr('width', d.width)
-            .attr('height', d.height)
-            .attr('fill', d.color)
-            .attr('stroke', d.color);
+            // .append(d.shape)
+            // .attr('x', function(d){ if(d.shape === 'rect'){return d.cx_pos}})
+            // .attr('y', function(d){ if(d.shape === 'rect'){return d.cy_pos}})
+            // .attr("cx", function(d){ if(d.shape === 'ellipse' || d.shape === 'circle'){return d.cx_pos}})
+            // .attr("cy", function(d){ if(d.shape === 'ellipse' || d.shape === 'circle'){return d.cy_pos}})
+            // .attr("r", function(d){ if( d.shape === 'circle'){return d.width / 2}})
+            // .attr("rx", function(d){ if(d.shape === 'ellipse' ){return d.width}})
+            // .attr("ry", function(d){ if(d.shape === 'ellipse' ){return d.height}})
+            // .attr("x1", function(d){ if(d.shape === 'line'){return d.cx_pos}})
+            // .attr("x2", function(d){ if(d.shape === 'line'){return +d.cx_pos + +d.width}})
+            // .attr("y1", function(d){ if(d.shape === 'line'){return d.cy_pos}})
+            // .attr("y2", function(d){ if(d.shape === 'line'){return +d.cy_pos + +d.height}})
+            // .attr('width', function(d){ if(d.shape === 'rect'){return d.width}})
+            // .attr('height', function(d){ if(d.shape === 'rect'){return d.height}})
+            // .attr('fill', function(d){ if(! d.shape === 'line'){return d.color}})
+            // .attr('stroke', function(d){ if( d.shape === 'line'){return d.color}});
         shapes.exit().remove()
     }
 

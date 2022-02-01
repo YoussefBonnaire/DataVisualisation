@@ -11,16 +11,16 @@
     let paragraph = d3.select("body")
         .selectAll("div")
         .data(num)
-        .text(function (d, i) {
+        .text(function (d) {
             return 'cont:' + d; // return value is used to set the 'text'
         })
-        .style("color", function (d, i) {
+        .style("color", function (d) {
             if (d >= 50 && d <= 100) {
                 return "red";
             } else {
                 return "yellow";
             }
-            return 'blue';
+            // return 'blue'; // Choose specific colors depending on interval for num value
         });
 </script>
 </html>

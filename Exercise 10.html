@@ -25,20 +25,21 @@ Number of patients with a heart failure over the age of 50: <span id="heart50"><
         data.forEach(
             d => GetFacts(d)
         )
+        // Populate page
         d3.select('#heart50').text(heart50);
-        console.log(age_bins)
         d3.selectAll('p').data(age_bins).enter().append('p').text((d, i) => 'Number of people in age group ' + bin_lab[i] + ': ' + d)
         d3.selectAll('h2').data(age_bins_male).enter().append('p').text((d, i) => 'Number of men in age group ' + bin_lab[i] + ': ' + d)
         d3.selectAll('h3').data(age_bins_female).enter().append('p').text((d, i) => 'Number of women in age group ' + bin_lab[i] + ': ' + d)
     });
 
+    // Get counts of varying features  for individual data points
     function GetFacts(d) {
         if (d.age >= 50) {
             heart50 += 1;
         }
         if (d.age >= 1 && d.age <= 30) {
             age_bins[0] += 1;
-            if (d.sex == 1) {
+            if (d.sex === 1) {
                 age_bins_male[0] += 1;
             } else {
                 age_bins_female[0] += 1;
@@ -46,7 +47,7 @@ Number of patients with a heart failure over the age of 50: <span id="heart50"><
         }
         if (d.age >= 31 && d.age <= 40) {
             age_bins[1] += 1;
-            if (d.sex == 1) {
+            if (d.sex === 1) {
                 age_bins_male[1] += 1;
             } else {
                 age_bins_female[1] += 1;
@@ -54,7 +55,7 @@ Number of patients with a heart failure over the age of 50: <span id="heart50"><
         }
         if (d.age >= 41 && d.age <= 60) {
             age_bins[2] += 1;
-            if (d.sex == 1) {
+            if (d.sex === 1) {
                 age_bins_male[2] += 1;
             } else {
                 age_bins_female[2] += 1;
@@ -62,7 +63,7 @@ Number of patients with a heart failure over the age of 50: <span id="heart50"><
         }
         if (d.age >= 61 && d.age <= 100) {
             age_bins[3] += 1;
-            if (d.sex == 1) {
+            if (d.sex === 1) {
                 age_bins_male[3] += 1;
             } else {
                 age_bins_female[3] += 1;

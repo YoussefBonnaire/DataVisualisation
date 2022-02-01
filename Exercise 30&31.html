@@ -41,10 +41,11 @@
         .attr("class", "arc")
     //Draw arc paths
     arcs.append("path")
-        .attr("fill", function (d, i) {
-            return color(i);
+        .attr("fill", function (d) {
+            return color(d.value);
         })
         .attr("d", arc);
+    // Add text labels
     arcs.append("text")
         .attr("transform", function (d) {
             return "translate(" + label.centroid(d) + ")";

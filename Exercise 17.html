@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Exercise 17</title>
-    <h1>Exercise 17</h1>
 </head>
 <body>
-
+<h1>Exercise 17</h1>
 </body>
 <script src='https://d3js.org/d3.v7.min.js'></script>
 <script>
@@ -14,14 +13,16 @@
     const width = 500;
     const barHeight = 20;
     const margin = 1;
+    // Initialises Scalar
     var scale = d3.scaleLinear()
         .domain([d3.min(data), d3.max(data)])
         .range([50, 500]);
+    // Initiliase svg
     var svg = d3.select("body")
         .append("svg")
         .attr("width", width)
         .attr("height", barHeight * data.length);
-
+    // Selects svg and enters our data to g
     var g = svg.selectAll("g")
         .data(data)
         .enter()
@@ -29,6 +30,7 @@
         .attr("transform", function (d, i) {
             return "translate(0," + i * barHeight + ")";
         });
+    // Creates bars
     g.append("rect")
         .attr("width", function (d) {
             return scale(d);
@@ -36,12 +38,13 @@
         .attr('fill', 'blue')
         .attr("height", barHeight - margin)
         .style('fill', function (d) {
-            if (d <= 100) {
+            if (d <= 100) { // changes bar color based on numeric value of data
                 return 'green'
             } else if (d >= 500) {
                 return 'red'
             }
         })
+    // Adds text
     g.append("text")
         .attr("x", function (d) {
             return (scale(d));

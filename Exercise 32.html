@@ -9,13 +9,6 @@
 </body>
 <script src='https://d3js.org/d3.v7.min.js' type='text/javascript'></script>
 <script>
-    var body = d3.select('body');
-    var data = d3.range(5);
-    var myColor3 = d3.scaleOrdinal().domain(data).range(["gold", "blue", "green", "yellow"]);
-    for (let i = 0; i < 20; i++) {
-        body.append('div').style('background-color', myColor3(i));
-    }
-    body.append('br');
     
     // Set Dimensions
     const xSize = 600;
@@ -39,9 +32,6 @@
             return d.y
         });
 
-        // Choose color pattern
-        var myColor = d3.scaleOrdinal().domain(data).range(["gold", "blue", "green", "yellow"]);
-
         // Append SVG Object to the Page
         const svg = d3.select("body")
             .append("svg")
@@ -49,7 +39,7 @@
             .attr('height', ySize)
             .append("g")
             .attr("transform", "translate(" + margin + "," + margin + ")");
-
+        // Add image
         svg.append('image')
             .attr('xlink:href', 'https://i.pinimg.com/736x/ec/87/92/ec87923355713c669c81e0fd9372ba85.jpg')
             .attr('width', xMax)
@@ -89,19 +79,18 @@
             .attr("id", "line-gradient")
             .attr("gradientUnits", "userSpaceOnUse")
             .attr("x1", 0)
-            .attr("y1", y(yMax))
+            .attr("y1", y(yExtent[0]))
             .attr("x2", 0)
-            .attr("y2", y(-1))
+            .attr("y2", y(yExtent[1]))
             .selectAll("stop")
-            .data(shape_data)
+            .data([
+                {offset: "0%", color: "white"},
+                {offset: "100%", color: "red"},
+            ])
             .enter()
             .append("stop")
-            .attr("offset", function (d) {
-                return d.y;
-            })
-            .attr("stop-color", function (d) {
-                return myColor(y(d.y));
-            });
+            .attr("offset", function(d) { return d.offset; })
+            .attr("stop-color", function(d) { return d.color; });
 
         // Add the line
         svg.append("path")

@@ -16,10 +16,6 @@
     var scale = d3.scaleLinear()
         .range([50, 500]);
 
-    // var svg = d3.select("body")
-    //     .append("svg")
-    //     .attr("width", width)
-
     newdata = 'Exercise 18.csv'
     DisplayCsv(newdata)
     DisplayCsv(newdata)
@@ -50,19 +46,19 @@
                 .enter()
                 .append("g")
                 .attr("transform", function (d, i) {
-                    return "translate(10," + i * barHeight + ")";
+                    return "translate(5," + i * barHeight + ")";
                 });
 
             var x_axis = d3.axisBottom()
                 .scale(xscale);
             svg.append("g")
-                .attr("transform", "translate(10, " + (barHeight * data.length) + ")")
+                .attr("transform", "translate(5, " + (barHeight * data.length) + ")")
                 .call(x_axis)
 
             var y_axis = d3.axisLeft()
                 .scale(yscale);
             svg.append('g')
-                .attr("transform", "translate(10, 0)")
+                .attr("transform", "translate(5, 0)")
                 .call(y_axis);
 
 

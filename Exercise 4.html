@@ -5,16 +5,18 @@
 <body>
 </body>
 <script>
+    // loop creating first five divs with 'under-five' as class for added functionality
     for(let i=1;i<=5;i++) {
         d3.select('body').append('div').attr('class', 'under-five').attr('id', i).text(i).style('color', 'red')
     }
 
+    // loop creating latter five divs with 'over-five' as class for added functionality
     for(let i=6;i<=10;i++) {
         d3.select('body').append('div').attr("class", 'over-five').text(i).style('color', 'green')
     }
-
-    console.log(d3.selectAll('div'))
+    // changing first div to a purple start
     d3.select('div').text('start').style('color', 'purple')
+    // changing all divs with class over-five to a green 'too many'
     d3.selectAll('.over-five').text('too many').style('green', 'purple')
 
 </script>
