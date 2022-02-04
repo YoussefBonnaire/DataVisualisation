@@ -71,7 +71,7 @@
     // }
 
     function RenderNew(d) {
-        const shapes = svg.selectAll('shape')
+        const shapes = svg.selectAll('*')
             .data(d)
             .join(
                 function(enter){
