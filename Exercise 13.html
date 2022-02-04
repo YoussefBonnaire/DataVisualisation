@@ -15,7 +15,7 @@
     file = 'exercise 12.csv'
 
     function DrawRect(enter, d) {
-        enter.append(d.shape)
+        return enter.append(d.shape)
             .attr('x', d.cx_pos)
             .attr('y', d.cy_pos)
             .attr('width', d.width)
@@ -25,7 +25,7 @@
     }
 
     function DrawCircle(enter, d) {
-        enter.append(d.shape)
+        return enter.append(d.shape)
             .attr("cx", d.cx_pos)
             .attr("cy", d.cy_pos)
             .attr("r", d.width / 2)
@@ -34,7 +34,7 @@
     }
 
     function DrawEllipse(enter, d) {
-        enter.append(d.shape)
+        return enter.append(d.shape)
             .attr("cx", d.cx_pos)
             .attr("cy", d.cy_pos)
             .attr("rx", d.width)
@@ -44,7 +44,7 @@
     }
 
     function DrawLine( enter,d) {
-        enter.append(d.shape)
+        return enter.append(d.shape)
             .attr("x1", d.cx_pos)
             .attr("x2", +d.cx_pos + +d.width)
             .attr("y1", d.cy_pos)
