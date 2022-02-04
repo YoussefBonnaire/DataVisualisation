@@ -72,9 +72,7 @@
 
     function RenderNew(d) {
         const shapes = svg.selectAll('shape')
-            .data(d);
-
-        shapes
+            .data(d)
             .join(
                 function(enter){
                     if (d.shape === 'rect') {
@@ -89,7 +87,8 @@
                     if (d.shape === 'line') {
                         return DrawLine(enter, d);
                     }
-                },
+                }
+                // ,
                 // function(exit){return exit.remove()}
             )
     }
