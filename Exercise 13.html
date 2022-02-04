@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <script src='https://d3js.org/d3.v7.min.js'></script>
-<h1>Exercise 13 (not completed)</h1>
+<h1>Exercise 13</h1>
 <body>
 
 </body>
@@ -14,78 +14,87 @@
         .style("border", '1px solid green');
     file = 'exercise 12.csv'
 
-    function Render(d) {
-        const shapes = svg.selectAll(d.shape).data([1]);
-        if (d.shape === 'rect') {
-            shapes
-                .enter()
-                .append(d.shape)
-                .attr('x', d.cx_pos)
-                .attr('y', d.cy_pos)
-                .attr('width', d.width)
-                .attr('height', d.height)
-                .attr('fill', d.color);
-        }
-        if (d.shape === 'circle') {
-            shapes
-                .enter()
-                .append(d.shape)
-                .attr("cx", d.cx_pos)
-                .attr("cy", d.cy_pos)
-                .attr("r", d.width / 2)
-                .attr('fill', d.color);
-        }
-        if (d.shape === 'ellipse') {
-            shapes
-                .enter()
-                .append(d.shape)
-                .attr("cx", d.cx_pos)
-                .attr("cy", d.cy_pos)
-                .attr("rx", d.width)
-                .attr("ry", d.height)
-                .attr('fill', d.color);
-        }
-        if (d.shape === 'line') {
-            shapes
-                .enter()
-                .append(d.shape)
-                .attr("x1", d.cx_pos)
-                .attr("x2", +d.cx_pos + +d.width)
-                .attr("y1", d.cy_pos)
-                .attr("y2", +d.cy_pos + +d.height)
-                .attr('stroke', d.color);
-        }
+    function DrawRect(enter, d) {
+        enter.append(d.shape)
+            .attr('x', d.cx_pos)
+            .attr('y', d.cy_pos)
+            .attr('width', d.width)
+            .attr('height', d.height)
+            .attr('fill', d.color)
+            .attr("class", "shape");
     }
 
-    function Render_Broken(d) {
+    function DrawCircle(enter, d) {
+        enter.append(d.shape)
+            .attr("cx", d.cx_pos)
+            .attr("cy", d.cy_pos)
+            .attr("r", d.width / 2)
+            .attr('fill', d.color)
+            .attr("class", "shape");
+    }
+
+    function DrawEllipse(enter, d) {
+        enter.append(d.shape)
+            .attr("cx", d.cx_pos)
+            .attr("cy", d.cy_pos)
+            .attr("rx", d.width)
+            .attr("ry", d.height)
+            .attr('fill', d.color)
+            .attr("class", "shape");
+    }
+
+    function DrawLine( enter,d) {
+        enter.append(d.shape)
+            .attr("x1", d.cx_pos)
+            .attr("x2", +d.cx_pos + +d.width)
+            .attr("y1", d.cy_pos)
+            .attr("y2", +d.cy_pos + +d.height)
+            .attr('stroke', d.color)
+            .attr("class", "shape");
+    }
+
+    // function Render(d) {
+    //     const shapes = svg.selectAll(d.shape).data([1]);
+    //     if (d.shape === 'rect') {
+    //         DrawRect(shapes, d);
+    //     }
+    //
+    //     if (d.shape === 'circle') {
+    //         DrawCircle(shapes, d);
+    //     }
+    //     if (d.shape === 'ellipse') {
+    //         DrawEllipse(shapes, d);
+    //     }
+    //     if (d.shape === 'line') {
+    //         DrawLine(shapes, d);
+    //     }
+    // }
+
+    function RenderNew(d) {
         const shapes = svg.selectAll('shape')
             .data(d);
-        
+
         shapes
-            .enter()
-            // .append(d.shape)
-            // .attr('x', function(d){ if(d.shape === 'rect'){return d.cx_pos}})
-            // .attr('y', function(d){ if(d.shape === 'rect'){return d.cy_pos}})
-            // .attr("cx", function(d){ if(d.shape === 'ellipse' || d.shape === 'circle'){return d.cx_pos}})
-            // .attr("cy", function(d){ if(d.shape === 'ellipse' || d.shape === 'circle'){return d.cy_pos}})
-            // .attr("r", function(d){ if( d.shape === 'circle'){return d.width / 2}})
-            // .attr("rx", function(d){ if(d.shape === 'ellipse' ){return d.width}})
-            // .attr("ry", function(d){ if(d.shape === 'ellipse' ){return d.height}})
-            // .attr("x1", function(d){ if(d.shape === 'line'){return d.cx_pos}})
-            // .attr("x2", function(d){ if(d.shape === 'line'){return +d.cx_pos + +d.width}})
-            // .attr("y1", function(d){ if(d.shape === 'line'){return d.cy_pos}})
-            // .attr("y2", function(d){ if(d.shape === 'line'){return +d.cy_pos + +d.height}})
-            // .attr('width', function(d){ if(d.shape === 'rect'){return d.width}})
-            // .attr('height', function(d){ if(d.shape === 'rect'){return d.height}})
-            // .attr('fill', function(d){ if(! d.shape === 'line'){return d.color}})
-            // .attr('stroke', function(d){ if( d.shape === 'line'){return d.color}});
-        shapes.exit().remove()
+            .join(
+                function(enter){
+                    if (d.shape === 'rect') {
+                       return DrawRect(enter, d);
+                    }
+                    if (d.shape === 'circle') {
+                        return DrawCircle(enter, d);
+                    }
+                    if (d.shape === 'ellipse') {
+                        return DrawEllipse(enter, d);
+                    }
+                    if (d.shape === 'line') {
+                        return DrawLine(enter, d);
+                    }
+                },
+                // function(exit){return exit.remove()}
+            )
     }
 
-    d3.csv(file, function (data) {
-            Render(data);
-        }
-    ).then(data => Render_Broken(data))
+    d3.csv(file).then(data => RenderNew(data))
 
 
 </script>
