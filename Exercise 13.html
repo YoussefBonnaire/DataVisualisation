@@ -15,42 +15,42 @@
     file = 'exercise 12.csv'
 
     function DrawRect(enter, d) {
-        return enter.append(d.shape)
+        return enter.append('path')
+            .attr("d", d3.rect())
             .attr('x', d.cx_pos)
             .attr('y', d.cy_pos)
             .attr('width', d.width)
             .attr('height', d.height)
-            .attr('fill', d.color)
-            .attr("class", "shape");
+            .attr('fill', d.color);
     }
 
     function DrawCircle(enter, d) {
-        return enter.append(d.shape)
+        return enter.append('path')
+            .attr("d", d3._circle)
             .attr("cx", d.cx_pos)
             .attr("cy", d.cy_pos)
             .attr("r", d.width / 2)
-            .attr('fill', d.color)
-            .attr("class", "shape");
+            .attr('fill', d.color);
     }
 
     function DrawEllipse(enter, d) {
-        return enter.append(d.shape)
+        return enter.append('path')
+            .attr("d", d3.ellipse)
             .attr("cx", d.cx_pos)
             .attr("cy", d.cy_pos)
             .attr("rx", d.width)
             .attr("ry", d.height)
-            .attr('fill', d.color)
-            .attr("class", "shape");
+            .attr('fill', d.color);
     }
 
     function DrawLine( enter,d) {
-        return enter.append(d.shape)
+        return enter.append('path')
+            .attr("d", d3.line)
             .attr("x1", d.cx_pos)
             .attr("x2", +d.cx_pos + +d.width)
             .attr("y1", d.cy_pos)
             .attr("y2", +d.cy_pos + +d.height)
-            .attr('stroke', d.color)
-            .attr("class", "shape");
+            .attr('stroke', d.color);
     }
 
     // function Render(d) {
