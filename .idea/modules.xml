@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/f21dv.iml" filepath="$PROJECT_DIR$/.idea/f21dv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/DataVisualisation.iml" filepath="$PROJECT_DIR$/.idea/DataVisualisation.iml" />
     </modules>
   </component>
 </project>

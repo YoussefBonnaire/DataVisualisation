@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src='https://d3js.org/d3.v7.min.js'></script>
+<h1>Exercise 3</h1>
+<body>
+</body>
+<script>
+    // loop creating first five divs with added 'under-five' class for added functionality
+  for(let i=1;i<=5;i++) {
+    d3.select('body').append('div').text(i).attr('class', 'under-five').style('color', 'red')
+  }
+    // loop creating latter five divs with added 'under-five' class for added functionality
+  for(let i=6;i<=10;i++) {
+    d3.select('body').append('div').text(i).attr("class", 'over-five').style('color', 'green')
+  }
+  console.log(d3.selectAll('div'))
+</script>
+</html>

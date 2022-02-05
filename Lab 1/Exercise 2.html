@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src='https://d3js.org/d3.v7.min.js'></script>
+<p>First paragraph</p>
+<p>Second paragraph</p>
+<script>
+    // change paragraph to use several styles
+  d3.select("p")
+          .style("color", "red") // Changes colour to red
+          .style('font-style', 'italic') // Changes font style to italic
+          .style('font-family', 'sans-serif') // Changes font to sans-serif
+          .style('font-size', '16pt') // Increases text size to 16pt
+          .style('font-weight', 'bolder') // Makes the text bold
+          .style('text-shadow', '2px 2px blue') // adds a blue 3d aspect with a 2px by 2px shadow
+          .style('word-spacing', '20px') // increases the spaces between words to 20px
+          .style('text-transform','capitalize'); // Capitalises the first letter of each word
+</script>
+</html>

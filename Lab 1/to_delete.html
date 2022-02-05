@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src='https://d3js.org/d3.v7.min.js'></script>
+<h1>Exercise 13</h1>
+<body>
+
+</body>
+<script>
+    //Create SVG element
+    var svg = d3.select("body")
+        .append("svg")
+        .attr("width", 600)
+        .attr("height", 600)
+        .style("border", '1px solid green');
+    file = 'exercise 12.csv'
+
+    function RenderNew(d) {
+        svg.selectAll('circle')
+            .data(d)
+            .join(
+                function(enter){
+                    if (d.shape === 'circle') {
+                        return enter.append(d.shape)
+                    }
+                },
+                function(exit){return exit.remove()}
+            )
+            .attr("cx", d.cx_pos)
+            .attr("cy", d.cy_pos)
+            .attr("r", d.width / 2)
+            .attr('fill', d.color);
+
+        svg.selectAll('rect')
+            .data(d)
+            .join(
+                function(enter){
+                    if (d.shape === 'rect') {
+                        return enter.append(d.shape)
+                    }
+                },
+                function(exit){return exit.remove()}
+            )
+            .attr('x', d.cx_pos)
+            .attr('y', d.cy_pos)
+            .attr('width', d.width)
+            .attr('height', d.height)
+            .attr('fill', d.color);
+
+        svg.selectAll('ellipse')
+            .data(d)
+            .join(
+                function(enter){
+                    if (d.shape === 'ellipse') {
+                        return enter.append(d.shape)
+                    }
+                },
+                function(exit){return exit.remove()}
+            )
+            .attr("cx", d.cx_pos)
+            .attr("cy", d.cy_pos)
+            .attr("rx", d.width)
+            .attr("ry", d.height)
+            .attr('fill', d.color);
+
+        svg.selectAll('line')
+            .data(d)
+            .join(
+                function(enter){
+                    if (d.shape === 'line') {
+                        return enter.append(d.shape)
+                    }
+                },
+                function(exit){return exit.remove()}
+            )
+            .attr("x1", d.cx_pos)
+            .attr("x2", +d.cx_pos + +d.width)
+            .attr("y1", d.cy_pos)
+            .attr("y2", +d.cy_pos + +d.height)
+            .attr('stroke', d.color);
+    }
+
+    d3.csv(file).then(data => RenderNew(data))
+
+
+</script>
+</html>
