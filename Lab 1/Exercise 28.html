@@ -38,13 +38,11 @@
 
     newdata = 'Exercise 18.csv'
     DisplayCsv(newdata)
-
     function DisplayCsv(file) {
         d3.csv(file).then(data => {
             var numeric_d = data.map(function (d) {
                 return +d.values
             })
-
             var myColor = d3.scaleSequential().domain([d3.min(numeric_d), d3.max(numeric_d)]).interpolator(d3.interpolateViridis);
             // Set bar scale with data
             scale.domain([d3.min(numeric_d), d3.max(numeric_d)]);

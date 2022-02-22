@@ -16,6 +16,7 @@
 
     // Renders the shape of a single data point
     function render(d) {
+        //Create rect element inside SVG
         if (d.shape === 'rect') {
             svg.append(d.shape)
                 .attr('x', d.cx_pos)
@@ -24,6 +25,7 @@
                 .attr('height', d.height)
                 .attr('fill', d.color);
         }
+        //Create circle element inside SVG
         if (d.shape === 'circle') {
             svg.append(d.shape)
                 .attr("cx", d.cx_pos)
@@ -31,6 +33,7 @@
                 .attr("r", d.width / 2)
                 .attr('fill', d.color);
         }
+        //Create ellipse element inside SVG
         if (d.shape === 'ellipse') {
             svg.append(d.shape)
                 .attr("cx", d.cx_pos)
@@ -39,6 +42,7 @@
                 .attr("ry", d.height)
                 .attr('fill', d.color);
         }
+        //Create line element inside SVG
         if (d.shape === 'line') {
             svg.append(d.shape)
                 .attr("x1", d.cx_pos)
@@ -53,30 +57,5 @@
             render(data)
         }
     )
-
-
-    // //Create and append rectangle element
-    // svg.append("rect")
-    //     .attr("x", 0)
-    //     .attr("y", 0)
-    //     .attr("width", 200)
-    //     .attr("height", 100)
-    //     .attr("fill", 'pink');
-    // //Append circle
-    // svg.append("circle")
-    //     .attr("cx", 250)
-    //     .attr("cy", 50)
-    //     .attr("r", 50);
-    // svg.append("ellipse")
-    //     .attr("cx", 250)
-    //     .attr("cy", 50)
-    //     .attr("rx", 150)
-    //     .attr("ry", 50);
-    // //Create and append text element into group
-    // svg.append("text")
-    //     .attr("x", 150)
-    //     .attr("y", 50)
-    //     .attr("stroke", "#fff")
-    //     .text("This is some text!");
 </script>
 </html>

@@ -13,12 +13,9 @@
     const barHeight = 20;
     const margin = 1;
 
+    // Initialise scale range to fit in svg
     var scale = d3.scaleLinear()
-        .range([50, 500]);
-
-    // var svg = d3.select("body")
-    //     .append("svg")
-    //     .attr("width", width)
+        .range([50, width]);
 
     newdata = 'Exercise 18.csv'
     DisplayCsv(newdata)
@@ -31,8 +28,7 @@
             var numeric_d = data.map(function (d) {
                 return +d.values
             })
-            // specifies scale based on data
-
+            // specifies scale domain based on data
             scale.domain([d3.min(numeric_d), d3.max(numeric_d)]);
 
             // Initialises svg height based on data

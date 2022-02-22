@@ -13,16 +13,18 @@
     const width = 500;
     const barHeight = 20;
     const margin = 1;
-    // Initialises Scalar
-    var scale = d3.scaleLinear()
-        .domain([d3.min(data), d3.max(data)])
-        .range([50, 500]);
     // Initiliase svg
     var svg = d3.select("body")
         .append("svg")
         .attr("width", width)
         .attr("height", barHeight * data.length);
-    // Selects svg and enters our data to g
+
+    // Initialise scale range to fit in svg
+    var scale = d3.scaleLinear()
+        .domain([d3.min(data), d3.max(data)])
+        .range([50, 500]);
+
+    // Selects svg and bind our data to g
     var g = svg.selectAll("g")
         .data(data)
         .enter()
@@ -33,7 +35,7 @@
     // Creates bars
     g.append("rect")
         .attr("width", function (d) {
-            return scale(d);
+            return scale(d); // Use scale to keep bars within svg
         })
         .attr('fill', 'blue')
         .attr("height", barHeight - margin)

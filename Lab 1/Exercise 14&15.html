@@ -38,14 +38,15 @@
         data.forEach(
             da => GetBins(da)
         )
-        // Populate bars with data
+        // Initialise g element to contain each bar at specified height
         var bar = graph.selectAll("g")
             .data(age_bins)
             .enter()
             .append("g")
             .attr("transform", function (d, i) {
-                return "translate(0," + i * barHeight + ")";
+                return "translate(0," + i * barHeight + ")"; // Make sure containers are one below the other
             });
+        // Populate bars with data
         bar.append("rect")
             .attr("width", function (d) {
                 return d * scaleFactor;

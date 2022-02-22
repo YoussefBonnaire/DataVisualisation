@@ -12,12 +12,11 @@
     const width = 500;
     const barHeight = 20;
     const margin = 1;
-    // Initialises Scalar
-
+    // Initialise scale range to fit in svg
     var scale = d3.scaleLinear()
         .range([50, 500]);
 
-    // Initiliase svg
+    // Initiliase svg width
     var svg = d3.select("body")
         .append("svg")
         .attr("width", width)
@@ -27,7 +26,7 @@
         var numeric_d = data.map(function (d) {
             return +d.values
         })
-        // specifies scale based on data
+        // specifies scale domain based on data
         scale.domain([d3.min(numeric_d), d3.max(numeric_d)]);
         // specifies svg height based on data
         svg.attr("height", barHeight * data.length);

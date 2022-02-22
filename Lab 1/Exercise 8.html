@@ -8,8 +8,8 @@
     var span = d3.select("body")
         .selectAll("span")
         .data(myData)
-        .enter()
-        .append('span')
+        .enter() // checks whether span element exist for data index
+        .append('span') // Adds non existing span elements
         .text(function (d) {
             return d;
         })
