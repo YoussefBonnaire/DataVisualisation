@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 6</title>
+</head>
+<body>
+<h1>Exercise 6</h1>
+</body>
+<script src='https://d3js.org/d3.v7.min.js'></script>
+<script>
+    // Create Div
+    d3.select('body')
+        .append("div")
+        .style('width', '100px')
+        .style('height', '100px')
+        .style('background-color', 'blue')
+        // transition to red
+        .transition()
+        .duration(1000)
+        .style("background-color", "red")
+        //Transition further to green
+        .transition()
+        .duration(2000)
+        .style('background-color','green');
+</script>
+</html>

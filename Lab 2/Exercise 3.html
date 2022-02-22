@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 3</title>
+</head>
+<body>
+<h1>Exercise 3</h1>
+</body>
+<script src='https://d3js.org/d3.v7.min.js'></script>
+<script>
+    // Add initial SVG
+    d3.select('body')
+        .append('div')
+        .style('width', '100px')
+        .style('height', '20px')
+        .style('background-color', 'green');
+
+    d3.selectAll("div")
+        // Change svg when mouse hovers in the following ways
+        .on("mouseover", function () {
+            d3.select(this)
+                .style("background-color", "orange")
+                .style('width', '150px')
+                .style('height', '30px')
+                .style('border', '5px outset orangered')
+                .style('display', 'block');
+        })
+        // Change svg after mouse hover in the following ways
+        .on("mouseout", function () {
+            d3.select(this)
+                .style("background-color", "steelblue")
+                .style('width', '125px')
+                .style('height', '25px')
+                .style('border', '2px outset darkblue');
+        });
+</script>
+</html>

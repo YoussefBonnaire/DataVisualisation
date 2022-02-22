@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 10</title>
+</head>
+<body>
+<h1>Exercise 10</h1>
+</body>
+<script src='https://d3js.org/d3.v7.min.js'></script>
+<script>
+    // Add initial SVG
+    var svg = d3.select("body")
+        .append("svg")
+        .attr("width", 500)
+        .attr("height", 500);
+    // add circle
+    svg.append('circle')
+        .attr("cx", 250)
+        .attr("cy", 250)
+        .attr("r", 100)
+        .attr('fill', 'red')
+        // transition the circle when mouse hovers in the following ways with bounce
+        .on("mouseover", function () {
+            d3.select(this)
+                .transition()
+                .duration(3000)
+                .ease(d3.easeBounce)
+                .attr("fill", "orange")
+                .attr('r', '150')
+                .style('opacity', .6)
+                .style('stroke', 'orange');
+        })
+        // transition the circle back after mouse hover with bounce
+        .on("mouseout", function () {
+            d3.select(this)
+                .transition()
+                .duration(1500)
+                .ease(d3.easeBounce)
+                .attr("r", 100)
+                .attr('fill', 'red')
+                .style('opacity', 1)
+                .style('stroke', 'red');
+        });
+</script>
+</html>

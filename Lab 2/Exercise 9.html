@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 9</title>
+</head>
+<body>
+<h1>Exercise 9</h1>
+</body>
+<script src='https://d3js.org/d3.v7.min.js'></script>
+<script>
+    // Add div element
+    d3.select('body')
+        .append("div")
+        .style('width', '100px')
+        .style('height', '100px')
+        .style('background-color', 'blue')
+        .style('transform', 'scale(1.0)')
+        // Bouncy transition
+        .transition()
+        .ease(d3.easeBounce)
+        .duration(5000)
+        .style("background-color", "red")
+        .style('transform', 'scale(0.5)')
+    // Add div element
+    d3.select('body')
+        .append("div")
+        .style('width', '100px')
+        .style('height', '100px')
+        .style('background-color', 'blue')
+        .style('transform', 'scale(1.0)')
+        // Elastic transition
+        .transition()
+        .ease(d3.easeElastic)
+        .duration(5000)
+        .style("background-color", "red")
+        .style('transform', 'scale(0.5)')
+    // Add div element
+    d3.select('body')
+        .append("div")
+        .style('width', '100px')
+        .style('height', '100px')
+        .style('background-color', 'blue')
+        .style('transform', 'scale(1.0)')
+        // Exponential transition
+        .transition()
+        .ease(d3.easeExp)
+        .duration(5000)
+        .style("background-color", "red")
+        .style('transform', 'scale(0.5)')
+</script>
+</html>

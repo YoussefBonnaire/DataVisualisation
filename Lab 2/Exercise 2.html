@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    div {
+        position: relative;
+        background-color: green;
+        padding: 20px;
+        display: none;
+    }
+    span:hover + div {
+        position: absolute;
+        display: inline-block;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 2</title>
+</head>
+<body>
+<h1>Exercise 2</h1>
+</body>
+<script src='https://d3js.org/d3.v7.min.js'></script>
+<script>
+    let body = d3.select('body');
+    // Add span and div one after the other to allocate that div to that span
+    body.append('span')
+        .text('Here we will show how to add an orange background as hover text.')
+        .style('color', 'orange')
+    body.append('div')
+        .text("Surprise! it's green!")
+
+    // Add span and div one after the other to allocate that div to that span
+    body.append('span')
+    .text('This part of the text however will have orange hover text.')
+    body.append('div')
+    .text('See? The text is green.').style('color','orange')
+</script>
+</html>

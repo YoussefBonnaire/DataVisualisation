@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 8</title>
+</head>
+<body>
+<h1>Exercise 8</h1>
+</body>
+<script src='https://d3js.org/d3.v7.min.js'></script>
+<script>
+    // Create Div
+    d3.select('body')
+        .append("div")
+        .style('width', '100px')
+        .style('height', '100px')
+        .style('background-color', 'blue')
+        //transition on mouse over
+        .on('mouseover', function () {
+            // transition to small red div
+            d3.select(this).transition()
+                .duration(1000)
+                .style("background-color", "red")
+                .style('width', '170px')
+                .style('height', '170px')
+        })
+        // transition back after mouse over
+        .on('mouseout', function () {
+            //Transition further to large green div
+            d3.select(this).transition()
+                .duration(2000)
+                .style('background-color', 'blue')
+                .style('width', '100px')
+                .style('height', '100px');
+        })
+</script>
+</html>

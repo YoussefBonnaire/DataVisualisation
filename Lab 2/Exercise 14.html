@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 14</title>
+</head>
+<body>
+<h1>Exercise 14 </h1>
+</body>
+<script src='https://d3js.org/d3.v7.min.js'></script>
+<script>
+    // Create SVG container
+    var svg = d3.select("body")
+        .append("svg")
+        .attr("width", 500)
+        .attr("height", 500);
+    // Add first bar
+    var bar1 = svg.append("rect")
+        .attr("fill", "blue")
+        .attr("x", 100)
+        .attr("y", 20)
+        .attr("height", 20)
+        .attr("width", 10)
+    // Add second bar
+    var bar2 = svg.append("rect")
+        .attr("fill", "blue")
+        .attr("x", 120)
+        .attr("y", 20)
+        .attr("height", 20)
+        .attr("width", 10)
+    // Add third bar
+    var bar3 = svg.append("rect")
+        .attr("fill", "blue")
+        .attr("x", 140)
+        .attr("y", 20)
+        .attr("height", 20)
+        .attr("width", 10)
+    update();
+
+    function update() {
+        // Add transition for first bar
+        bar1.transition()
+            .ease(d3.easeLinear)
+            .duration(2000)
+            .attr("height", 100)
+            .attr('fill', 'red')
+            // transition back after all are finished
+            .transition()
+            .ease(d3.easeLinear)
+            .duration(2000)
+            .delay(4000)
+            .attr("height", 20)
+            .attr('fill', 'blue')
+
+        // Add transition for second bar delayed by 2 seconds
+        bar2.transition()
+            .ease(d3.easeLinear)
+            .duration(2000)
+            .delay(2000)
+            .attr("height", 100)
+            .attr('fill', 'red')
+            // transition back after all are finished
+            .transition()
+            .ease(d3.easeLinear)
+            .duration(2000)
+            .delay(4000)
+            .attr("height", 20)
+            .attr('fill', 'blue')
+        // add transition for third bar delayed by 4 seconds
+        bar3.transition()
+            .ease(d3.easeLinear)
+            .duration(2000)
+            .delay(4000)
+            .attr("height", 100)
+            .attr('fill', 'red')
+            // transition back after all are finished
+            .transition()
+            .ease(d3.easeLinear)
+            .duration(2000)
+            .delay(4000)
+            .attr("height", 20)
+            .attr('fill', 'blue')
+    }
+</script>
+</html>
