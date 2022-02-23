@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src='https://d3js.org/d3.v7.min.js' type='text/javascript'></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 23</title>
+</head>
+<body>
+<h1>Exercise 23</h1>
+</body>
+<!-- Add buttons -->
+<button onclick="update(data1)">Variable 1</button>
+<button onclick="update(data2)">Variable 2</button>
+<button onclick="update(data3)">Variable 3</button>
+<script>
+    // create 3 data_set
+    const data1 = [
+        {group: "A", value: 5},
+        {group: "B", value: 20},
+        {group: "C", value: 9}
+    ];
+    const data2 = [
+        {group: "A", value: 10},
+        {group: "B", value: 2},
+        {group: "C", value: 22},
+        {group: "D", value: 50}
+    ];
+    const data3 = [
+        {group: "A", value: 15},
+        {group: "B", value: 14},
+        {group: "C", value: 35}
+    ];
+    // Set colors
+    const colors = ['red', 'blue', 'green']
+    // set the dimensions and margins of the graph
+    const margin = {top: 30, right: 30, bottom: 70, left: 60};
+    const width = 460 - margin.left - margin.right;
+    const height = 400 - margin.top - margin.bottom;
+    // append the svg object to the body of the page
+    var svg = d3.select('body')
+        .append('div')
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform",
+            "translate(" + margin.left + "," + margin.top + ")");
+    // X axis
+    var x = d3.scaleBand()
+        .range([0, width])
+        .padding(0.2);
+    // Initialise bottom
+    svg.append("g")
+        .attr("class", "myXaxisbot")
+        .attr("transform", "translate(0," + height + ")")
+    // Initialise top
+    svg.append("g")
+        .attr("class", "myXaxistop")
+        .attr("transform", "translate(0,0)")
+    // Add Y axis
+    var y = d3.scaleLinear()
+        .range([height, 0]);
+
+    // left
+    svg.append("g")
+        .attr("class", "myYaxis")
+        .transition()
+        .duration(1000)
+        .call(d3.axisLeft(y));
+    // right
+    svg.append("g")
+        .attr("class", "myYaxis")
+        .attr("transform", "translate(" + width + ",0)")
+        .transition()
+        .duration(1000)
+        .call(d3.axisRight(y));
+
+    // A function that create / update the plot for a given variable:
+    function update(data) {
+        // Remove old axis (if present)
+        d3.selectAll('.myXaxis')
+            .remove()
+        // specify x scale based on data
+        x.domain(data.map(function (d) {
+            return d.group;
+        }))
+        // specify y scale based on data
+        y.domain([0, d3.max(data, function (d) {
+            return d.value;
+        })])
+        console.log(x('A'))
+        // bottom axis
+        svg.selectAll(".myXaxisbot")
+            .transition()
+            .duration(1000)
+            .call(d3.axisBottom(x))
+        // top axis
+        svg.selectAll(".myXaxistop")
+            .transition()
+            .duration(1000)
+            .call(d3.axisTop(x))
+
+        var u = svg.selectAll(".myLine")
+            .data([data], function (d) {
+                return d.group
+            })
+        u.enter()
+            .append("path")
+            .attr('class', 'myLine')
+            .merge(u)
+            .transition()
+            .duration(1000)
+            .attr("d", d3.line()
+                .x(function (d) {
+                    return x(d.group) + x.bandwidth() / 2;
+                })
+                .y(function (d) {
+                    return y(d.value);
+                }))
+            // add color based on dataset
+            .attr("stroke", function () {
+                if (data === data1) {
+                    return colors[0];
+                } else if (data === data2) {
+                    return colors[1];
+                } else if (data === data3) {
+                    return colors[2];
+                }
+            })
+            .attr('stroke-width', 2.5)
+            .attr('fill', 'none');
+        u.exit()
+            .transition().duration(1000).attr('x', 600)
+            .remove()
+    }
+
+    // Initialize the plot with the first dataset
+    update(data1)
+</script>
+</html>

@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53cdb0bc-3666-4943-b813-30fc96cd8d82" name="Changes" comment="Start on Lab 2">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 1/.idea/Lab 1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 10.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 11.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 12.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 13.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 14.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 6.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 7.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 8.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DataVisualisation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DataVisualisation.iml" afterDir="false" />
+    <list default="true" id="53cdb0bc-3666-4943-b813-30fc96cd8d82" name="Changes" comment="Progress on Lab 2">
+      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 15.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 15.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 16.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 17.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 18.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 19.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 20.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 21.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 22.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 23.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab 2/Exercise 1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 2/Exercise 1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 2/F21DV_Report_Lab2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 2/F21DV_Report_Lab2.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 2/~$1DV_Report_Lab2.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +35,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="4" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -53,6 +53,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -76,7 +77,8 @@
       <option name="presentableId" value="Default" />
       <updated>1644060573686</updated>
       <workItem from="1644060576527" duration="12827000" />
-      <workItem from="1645522300408" duration="11226000" />
+      <workItem from="1645522300408" duration="14349000" />
+      <workItem from="1645628435852" duration="10747000" />
     </task>
     <task id="LOCAL-00001" summary="Start on Lab 2">
       <created>1645523684855</created>
@@ -85,11 +87,21 @@
       <option name="project" value="LOCAL" />
       <updated>1645523684855</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Progress on Lab 2">
+      <created>1645539073438</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1645539073438</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -103,8 +115,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Start on Lab 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start on Lab 2" />
+    <MESSAGE value="Progress on Lab 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Progress on Lab 2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

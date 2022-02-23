@@ -1,126 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
-  .pulse {
-    border: 1px solid red;
-    fill: lightblue;
-    stroke: purple;
-    -webkit-transform: scale(1);
-    -webkit-transform-origin: 50% 50%;
-    transform: scale(1);
-    transform-origin: 50% 50%;
-  }
-  .pulse:hover
-  {
-    -webkit-animation-name: pulsar;
-    -webkit-animation-duration: 0.2s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-direction: alternate;
-    animation-name: pulsar;
-    animation-duration: 0.2s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    -webkit-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-  }
-  @keyframes pulsar {
-    from {
-      fill: red;
+    .pulse {
+        border: 1px solid red;
+        fill: lightblue;
+        stroke: purple;
+        -webkit-transform: scale(1);
+        -webkit-transform-origin: 50% 50%;
+        transform: scale(1);
+        transform-origin: 50% 50%;
     }
-    to {
-      fill: red;
-      transform: scale(1.3,1.3);
-      transform-origin: 2% 2%;
+
+    .pulse:hover {
+        -webkit-animation-name: pulsar;
+        -webkit-animation-duration: 0.2s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-direction: alternate;
+        animation-name: pulsar;
+        animation-duration: 0.2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
     }
-  }
+
+    @keyframes pulsar {
+        from {
+            fill: red;
+        }
+        to {
+            fill: red;
+            transform: scale(1.3, 1.3);
+            transform-origin: 2% 2%;
+        }
+    }
 </style>
 
 <head>
-  <meta charset="UTF-8">
-  <title>Exercise 1</title>
+    <meta charset="UTF-8">
+    <title>Exercise 1</title>
 </head>
 <body>
 <h1>Exercise 1</h1>
 </body>
 <script src='https://d3js.org/d3.v7.min.js'></script>
 <script>
-  // Set Dimensions
-  const xSize = 600;
-  const ySize = 600;
-  const margin = 40;
-  const xMax = xSize - margin * 2;
-  const yMax = ySize - margin * 2;
-  const numPoints = 100;
-  const data = [];
+    // Set Dimensions
+    const xSize = 600;
+    const ySize = 600;
+    const margin = 40;
+    const xMax = xSize - margin * 2;
+    const yMax = ySize - margin * 2;
+    const numPoints = 100;
+    const data = [];
 
-  // Create Random Points
-  for (let i = 0; i < numPoints; i++) {
-    data.push({x: i / 100, y: Math.cos(6.2 * i / 100)});
-  }
+    // Create Random Points
+    for (let i = 0; i < numPoints; i++) {
+        data.push({x: i / 100, y: Math.cos(6.2 * i / 100)});
+    }
 
-  DrawWave(data)
+    DrawWave(data)
 
-  function DrawWave(shape_data) {
-    // Get the 'limits' of the data - the full extent (mins and max)
-    // so the plotted data fits perfectly
-    const xExtent = d3.extent(shape_data, d => {
-      return d.x
-    });
-    const yExtent = d3.extent(shape_data, d => {
-      return d.y
-    });
-    // Append SVG Object to the Page
-    const svg = d3.select("body")
+    function DrawWave(shape_data) {
+        // Get the 'limits' of the data - the full extent (mins and max)
+        // so the plotted data fits perfectly
+        const xExtent = d3.extent(shape_data, d => {
+            return d.x
+        });
+        const yExtent = d3.extent(shape_data, d => {
+            return d.y
+        });
+        // Append SVG Object to the Page
+        const svg = d3.select("body")
             .append("svg")
             .attr('width', xSize)
             .attr('height', ySize)
             .append("g")
             .attr("transform", "translate(" + margin + "," + margin + ")");
-    // X Axis
-    const x = d3.scaleLinear()
+        // X Axis
+        const x = d3.scaleLinear()
             .domain([xExtent[0], xExtent[1]])
             .range([0, xMax]);
-    // bottom
-    svg.append("g")
+        // bottom
+        svg.append("g")
             .attr("transform", "translate(0," + yMax + ")")
             .call(d3.axisBottom(x))
-            .attr('color', 'green'); // make bottom axis green
-    // Y Axis
-    const y = d3.scaleLinear()
+        // Y Axis
+        const y = d3.scaleLinear()
             .domain([yExtent[0], yExtent[1]])
             .range([yMax, 0]);
-    // left y axis
-    svg.append("g")
+        // left y axis
+        svg.append("g")
             .call(d3.axisLeft(y));
-    // Add the line
-    svg.append("path")
+        // Add the line
+        svg.append("path")
             .datum(shape_data)
             .attr("fill", "none")
             .attr("stroke", "steelblue")
             .attr("stroke-width", 1.5)
             .attr("d", d3.line()
-                    .x(function (d) {
-                      return x(d.x)
-                    })
-                    .y(function (d) {
-                      return y(d.y)
-                    })
+                .x(function (d) {
+                    return x(d.x)
+                })
+                .y(function (d) {
+                    return y(d.y)
+                })
             );
 
-    // Add points
-    svg.selectAll("dot")
+        // Add points
+        svg.selectAll("dot")
             .data(shape_data)
             .enter()
             .append("circle")
             .attr("cx", function (d) {
-              return x(d.x)
+                return x(d.x)
             })
             .attr("cy", function (d) {
-              return y(d.y)
+                return y(d.y)
             })
             .attr("r", 5)
             .style("fill", "red")
-            .attr('class','pulse');
-  }
+            .attr('class', 'pulse');
+    }
 </script>
 </html>
