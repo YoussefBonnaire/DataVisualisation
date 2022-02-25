@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src='https://d3js.org/d3.v7.min.js' type='text/javascript'></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 29</title>
+</head>
+<body>
+<h1>Exercise 29</h1>
+</body>
+<script src='https://d3js.org/d3.v7.min.js' type='text/javascript'></script>
+<script>
+    var width = 400, height = 400;
+    // setup svg
+    d3.select('body').append('svg').attr('width', width).attr('height', height);
+    // generate some random data
+    var numNodes = 100;
+    // specify file name
+    file_name = 'Exercise 29.json'
+    d3.json(file_name).then(function (data) {
+        // specify color
+        var Color = d3.scaleLinear().range(["blue", "red"]).domain([d3.min(data, function (d) {
+            return d.radius;
+        }), d3.max(data, function (d) {
+            return d.radius;
+        })]);
+        var simulation = d3.forceSimulation(data)
+            .force('charge', d3.forceManyBody().strength(5))
+            .force('center', d3.forceCenter(width / 2, height / 2))
+            .force('collision', d3.forceCollide().radius(function (d) {
+                return d.radius + 1
+            }))
+            .on('tick', ticked);
+
+        function ticked() {
+            var u = d3.select('svg')
+                .selectAll('circle')
+                .data(data)
+                .join('circle')
+                // specify color of circle based on data
+                .attr('fill', function (d) {
+                    return Color(d.radius)
+                })
+                .attr('r', function (d) {
+                    return d.radius
+                })
+                .attr('cx', function (d) {
+                    return d.x
+                })
+                .attr('cy', function (d) {
+                    return d.y
+                })
+        }
+    })
+
+</script>
+</html>

@@ -37,17 +37,21 @@
         .attr("transform", "translate(" + 100 + "," + 100 + ")");
     file_name = "Exercise 15.csv"
     d3.csv(file_name).then(function (data) {
+        // set color domain
         Color.domain([d3.min(data, function (d) {
             return d.value;
         }), d3.max(data, function (d) {
             return d.value;
         })])
+        // set x scale domain
         x.domain(data.map(function (d) {
             return d.year;
         }));
+        // set y scale domain
         y.domain([0, d3.max(data, function (d) {
             return d.value;
         })]);
+        // bottom axis
         g.append("g")
             .attr("transform", "translate(0," + height + ")")
             .call(d3.axisBottom(x))
@@ -57,6 +61,7 @@
             .attr("text-anchor", "end")
             .attr("stroke", "black")
             .text("Year");
+        // left axis
         g.append("g")
             .call(d3.axisLeft(y).tickFormat(function (d) {
                 return "$" + d;
@@ -69,6 +74,7 @@
             .attr("text-anchor", "end")
             .attr("stroke", "black")
             .text("Stock Price");
+        // create rectangles for graph
         g.selectAll(".bar")
             .data(data)
             .enter().append("rect")
