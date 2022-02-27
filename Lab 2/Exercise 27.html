@@ -70,7 +70,7 @@
         paths
             .transition()
             .duration(1000)
-            .attrTween("d", arcTween)
+            .attrTween("d", transitionArc)
     }
 
     function addAdditionalPath(paths) {
@@ -101,7 +101,7 @@
             .remove()
     }
 
-    function arcTween(a) {
+    function transitionArc(a) {
         var i = d3.interpolate(this._current, a);
         this._current = i(0);
         return function (t) {

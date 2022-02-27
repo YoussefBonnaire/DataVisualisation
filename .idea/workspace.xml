@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53cdb0bc-3666-4943-b813-30fc96cd8d82" name="Changes" comment="Progress on Lab 2">
-      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 24.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 25.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 26.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 27.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 28.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 29.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 29.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 30.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 31.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 2/Exercise 32.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 2/~$1DV_Report_Lab2.docx" afterDir="false" />
+    <list default="true" id="53cdb0bc-3666-4943-b813-30fc96cd8d82" name="Changes" comment="Finished Lab 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab 2/Exercise 15.html" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 2/Exercise 15.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab 2/Exercise 16.html" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 2/Exercise 16.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab 2/Exercise 17.html" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 2/Exercise 17.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 2/Exercise 27.html" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 2/Exercise 27.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 2/F21DV_Report_Lab2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 2/F21DV_Report_Lab2.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 2/~$1DV_Report_Lab2.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +73,8 @@
       <workItem from="1645641375300" duration="172000" />
       <workItem from="1645695019613" duration="12036000" />
       <workItem from="1645715635936" duration="126000" />
-      <workItem from="1645780438111" duration="3055000" />
+      <workItem from="1645780438111" duration="5909000" />
+      <workItem from="1645969108874" duration="2144000" />
     </task>
     <task id="LOCAL-00001" summary="Start on Lab 2">
       <created>1645523684855</created>
@@ -107,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645639403078</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Finished Lab 2">
+      <created>1645783928604</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1645783928604</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,7 +128,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Start on Lab 2" />
     <MESSAGE value="Progress on Lab 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Progress on Lab 2" />
+    <MESSAGE value="Finished Lab 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished Lab 2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
