@@ -1,11 +1,11 @@
 function getTimeData() {// Get vacc data
-    return d3.csv('vaccinations/vaccinations.csv', function (d) {
+    return d3.csv('owid-covid-data.csv', function (d) {
         return {
             date: formatDate(new Date(d.date)),
             iso_code: d.iso_code,
             country: d.location,
-            tot_cases_per_mil: +d.new_cases_per_million,
-            tot_deaths_per_hundred: +d.new_deaths_per_million,
+            tot_cases: +d.new_cases,
+            tot_deaths: +d.new_deaths,
             tot_vac_per_hundred: +d.total_vaccinations_per_hundred,
             people_vac_per_hundred: +d.people_vaccinated_per_hundred,
             full_vac_per_hundred: +d.people_fully_vaccinated_per_hundred,
@@ -75,25 +75,64 @@ function getCountries(vaccdat, country_dataless, date) {
 }
 
 function getCountryData() {
-    return d3.csv('owid-covid-data.csv', function (d) {
+    return Promise.all([d3.csv('owid-covid-data.csv', function (d) {
         return {
             date: formatDate(new Date(d.date)),
             iso_code: d.iso_code,
             country: d.location,
-            tot_cases_per_mil: +d.new_cases_per_million,
-            tot_deaths_per_hundred: +d.new_deaths_per_million,
+            tot_cases: +d.new_cases_smoothed,
+            tot_deaths: +d.new_deaths_smoothed,
             tot_vac_per_hundred: +d.total_vaccinations_per_hundred,
             people_vac_per_hundred: +d.people_vaccinated_per_hundred,
             full_vac_per_hundred: +d.people_fully_vaccinated_per_hundred,
             boosted_per_hundred: +d.total_boosters_per_hundred
 
         };
-    }).then((data) => {
-        // Select one specific day for each country available
-        data = data.filter((d) => {
-            return !/OWID_/.test(d.iso_code)
+    }), d3.csv('owid-covid-latest.csv', function (d) {
+        return {
+            iso_code: d.iso_code,
+            population: +d.population
+        };
+    }), d3.csv('gdp_perCapita.csv', function (d) {
+        return {
+            iso_code: d['Country Code'],
+            gdp: +d['2020']
+        };
+    })]).then(([cov, pop, gdp]) => {
+        let complete = [];
+        cov.forEach(c => {
+            let country;
+            let pop_for_country = pop.filter(ret => ret.iso_code === c.iso_code);
+            let gdp_for_country = gdp.filter(ret => ret.iso_code === c.iso_code);
+            pop_for_country = pop_for_country[0];
+            if (gdp_for_country.length !== 0) {
+                gdp_for_country = gdp_for_country[0];
+                country = Object.assign({}, c, pop_for_country, gdp_for_country);
+            } else {
+                country = Object.assign({}, c, pop_for_country);
+            }
+            complete.push(country)
         })
-        grouped = groupNested(data, 'country')
+        grouped = groupNested(complete, 'country')
         return grouped;
+    })
+}
+
+function addPop(Countries) {
+    return Promise.all([d3.csv('owid-covid-latest.csv', function (d) {
+        return {
+            iso_code: d.iso_code,
+            population: +d.population
+        };
+    }), Countries]).then(([pop, countries]) => {
+        countries.features.forEach(d => {
+            let pop_for_country = pop.filter(ret => ret.iso_code === d.properties[0])
+            if (pop_for_country.length !== 0) {
+                pop_for_country = pop_for_country[0]
+                delete pop_for_country.iso_code
+                Object.assign(d.properties, pop_for_country);
+            }
+        });
+        return countries
     })
 }

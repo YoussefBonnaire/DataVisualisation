@@ -6,14 +6,13 @@ function DrawMap() {
         .attr('fill', 'rgba(65, 82, 166, 0.97)');
 
     Countries.then(countries => {
-        min = d3.min(countries.features.map(value))
-        max = d3.max(countries.features.map(value))
         // Set domain of colors
         Color.domain([0, 100])
         // draw countries
         g.selectAll('path').data(countries.features)
             .enter().append('path')
             .attr('class', 'country')
+            .attr('id', d => d.properties.iso_code)
             .attr('d', pathGenerator)
             .attr('fill', d => {
                 if (typeof value(d) === "undefined") {
@@ -21,10 +20,11 @@ function DrawMap() {
                 } else {
                     return Color(value(d));
                 }
-
             })
+            .attr('stroke', 'rgba(96, 90, 90, 0.97)')
             .on("mouseover", onMouseOver) //Add listener for the mouseover event
             .on("mouseout", onMouseOut) //Add listener for the mouseout event
+            .on('click', top10_)
             // .on('click', showLineGraph)
             .append('title')
             .text(d => {
@@ -73,43 +73,12 @@ function DrawMap() {
     });
 }
 
-function onMouseOver(event) {
-    d3.select(this).attr('fill', 'orange')
-    country = event.target.__data__
-    g.append("text")
-        .attr('class', 'label-text')
-        .attr('transform', function () {
-            x = pathGenerator.centroid(country)[0];
-            y = pathGenerator.centroid(country)[1];
-            return 'translate( ' + (x - 10) + ', ' + y + ' )'
-        })
-        .text(d => {
-            if (value(country) === "" || typeof value(country) === "undefined") {
-                return 'N/A';
-            } else {
-                return value(country);
-            }
-        }).style("font", "10px sans-serif")
-
-}
-
-function onMouseOut() {
-    d3.select(this).attr('fill', d => {
-        if (typeof value(d) === "undefined") {
-            return 'red';
-        } else {
-            return Color(value(d));
-        }
-    });
-
-    d3.selectAll('.label-text')
-        .remove()
-}
+let chosen;
 
 function UpdateMap(value, date) {
+    chosen = value;
     Countries.then(countries => {
         if (countries.features.map(d => d.properties.date)[0] === formatDate(date)) {
-            max = d3.max(countries.features.map(value))
             // Set domain of colors
             Color.domain([0, 100])
             d3.selectAll('.country').transition().duration(1000).attr('fill', d => {
@@ -120,9 +89,11 @@ function UpdateMap(value, date) {
                 }
 
             })
+                .attr('stroke', 'rgba(96, 90, 90, 0.97)')
             d3.selectAll('.country')
                 .on("mouseover", onMouseOverUpd(value)) //Add listener for the mouseover event
                 .on("mouseout", onMouseOutUpd(value)) //Add listener for the mouseout event
+                .on('click', top10_)
                 .select('title')
                 .text(d => {
                     if (value(d) === "" || typeof value(d) === "undefined") {
@@ -131,17 +102,6 @@ function UpdateMap(value, date) {
                         return d.properties.name + ': ' + value(d);
                     }
                 })
-            // set x scale domain
-            var x = d3.scaleLinear()
-                .range([20, width_map - 20])
-                .domain([0, 100]);
-            // Add axis
-            axis = d3.axisBottom(x).ticks(10);
-            // bottom axis
-            g.selectAll(".Xaxis")
-                .transition()
-                .duration(1000)
-                .call(d3.axisBottom(x))
             return null;
         }
         Countries = getCountries(vaccdat, country_dataless, formatDate(date))
@@ -150,6 +110,7 @@ function UpdateMap(value, date) {
                 g.selectAll('path').data(countries.features)
                     .enter().append('path')
                     .attr('class', 'country')
+                    .attr('id', d => d.properties.iso_code)
                     .attr('d', pathGenerator)
                     .attr('fill', d => {
                         if (typeof value(d) === "undefined") {
@@ -157,7 +118,6 @@ function UpdateMap(value, date) {
                         } else {
                             return Color(value(d));
                         }
-
                     })
                     .on("mouseover", onMouseOverUpd) //Add listener for the mouseover event
                     .on("mouseout", onMouseOutUpd) //Add listener for the mouseout event
@@ -194,12 +154,69 @@ function UpdateMap(value, date) {
     })
 }
 
+function onMouseOver(event) {
+    d3.select(this).transition().duration(500)
+        .attr('fill', 'orange')
+    country = event.target.__data__
+    g.append("text")
+        .attr('class', 'label-text').transition().duration(500)
+        .attr('transform', function () {
+            x = pathGenerator.centroid(country)[0];
+            y = pathGenerator.centroid(country)[1];
+            return 'translate( ' + (x - 10) + ', ' + y + ' )'
+        })
+        .text(d => {
+            if (value(country) === "" || typeof value(country) === "undefined") {
+                return 'N/A';
+            } else {
+                return value(country);
+            }
+        }).style("font", "10px sans-serif")
+    graphMouseOver_fromMap(event);
+}
+
+function onMouseOut(event) {
+    d3.select(this).transition().duration(1000)
+        .attr('fill', d => {
+            if (typeof value(d) === "undefined") {
+                return 'red';
+            } else {
+                return Color(value(d));
+            }
+        });
+    d3.selectAll('.label-text')
+        .remove()
+    graphMouseOut_fromMap(event);
+}
+
+function onMouseOver_fromGraph(event) {
+    country = event.target.__data__
+    map_svg.select('#' + country.iso_code).transition().duration(500)
+        .attr('fill', 'orange')
+}
+
+function onMouseOut_fromGraph(event) {
+    country = event.target.__data__
+    d3.select('#' + country.iso_code).transition().duration(1000)
+        .attr('fill', d => {
+            if (typeof value(d) === "undefined") {
+                return 'red';
+            } else {
+                return Color(value(d));
+            }
+        });
+    d3.selectAll('.label-text')
+        .remove()
+}
+
 function onMouseOverUpd(value) {
     return function (event) {
-        d3.select(this).attr('fill', 'orange');
+        d3.select(this).transition().duration(500)
+            .attr('fill', 'orange');
         country = event.target.__data__
         g.append("text")
             .attr('class', 'label-text')
+            .transition().duration(500)
             .attr('transform', function () {
                 x = pathGenerator.centroid(country)[0];
                 y = pathGenerator.centroid(country)[1];
@@ -212,20 +229,37 @@ function onMouseOverUpd(value) {
                     return value(country);
                 }
             }).style("font", "10px sans-serif")
+        graphMouseOver_fromMapUpd(event);
     };
 }
 
 function onMouseOutUpd(value) {
-    return function () {
-        d3.select(this).attr('fill', d => {
-            if (typeof value(d) === "undefined") {
-                return 'red';
-            } else {
-                return Color(value(d));
-            }
-        });
+    return function (event) {
+        d3.select(this).transition().duration(1000)
+            .attr('fill', d => {
+                if (typeof value(d) === "undefined") {
+                    return 'red';
+                } else {
+                    return Color(value(d));
+                }
+            });
 
-        d3.selectAll('.label-text')
+        d3.selectAll('.label-text').transition().duration(500)
             .remove()
+        graphMouseOut_fromMapUpd(event);
     };
+}
+
+function onMouseOut_fromGraphUpd(event) {
+    country = event.target.__data__
+    d3.select('#' + country.iso_code).transition()
+        .duration(1000).attr('fill', d => {
+        if (typeof chosen(d) === "undefined") {
+            return 'red';
+        } else {
+            return Color(chosen(d));
+        }
+    });
+    d3.selectAll('.label-text').transition().duration(500)
+        .remove()
 }

@@ -1,253 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53cdb0bc-3666-4943-b813-30fc96cd8d82" name="Changes" comment="Finished Lab 2">
-      <change afterPath="$PROJECT_DIR$/Lab 3/CovLine.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/LoadData.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/VaccBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/VaccMap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/VaccPie.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/VaccRace.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/owid-covid-data.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Afghanistan.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Albania.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Algeria.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Andorra.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Angola.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Anguilla.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Antigua and Barbuda.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Argentina.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Armenia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Aruba.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Australia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Austria.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Azerbaijan.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Bahamas.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Bahrain.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Bangladesh.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Barbados.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Belarus.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Belgium.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Belize.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Benin.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Bermuda.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Bhutan.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Bolivia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Bonaire Sint Eustatius and Saba.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Bosnia and Herzegovina.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Botswana.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Brazil.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/British Virgin Islands.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Brunei.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Bulgaria.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Burkina Faso.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Burundi.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Cambodia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Cameroon.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Canada.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Cape Verde.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Cayman Islands.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Central African Republic.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Chad.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Chile.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/China.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Colombia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Comoros.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Congo.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Cook Islands.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Costa Rica.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Cote d'Ivoire.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Croatia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Cuba.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Curacao.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Cyprus.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Czechia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Democratic Republic of Congo.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Denmark.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Djibouti.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Dominica.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Dominican Republic.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Ecuador.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Egypt.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/El Salvador.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/England.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Equatorial Guinea.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Estonia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Eswatini.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Ethiopia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Faeroe Islands.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Falkland Islands.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Fiji.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Finland.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/France.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/French Polynesia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Gabon.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Gambia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Georgia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Germany.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Ghana.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Gibraltar.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Greece.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Greenland.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Grenada.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Guatemala.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Guernsey.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Guinea-Bissau.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Guinea.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Guyana.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Haiti.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Honduras.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Hong Kong.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Hungary.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Iceland.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/India.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Indonesia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Iran.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Iraq.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Ireland.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Isle of Man.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Israel.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Italy.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Jamaica.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Japan.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Jersey.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Jordan.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Kazakhstan.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Kenya.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Kiribati.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Kosovo.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Kuwait.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Kyrgyzstan.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Laos.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Latvia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Lebanon.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Lesotho.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Liberia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Libya.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Liechtenstein.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Lithuania.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Luxembourg.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Macao.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Madagascar.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Malawi.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Malaysia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Maldives.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Mali.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Malta.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Mauritania.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Mauritius.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Mexico.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Moldova.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Monaco.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Mongolia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Montenegro.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Montserrat.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Morocco.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Mozambique.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Myanmar.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Namibia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Nauru.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Nepal.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Netherlands.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/New Caledonia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/New Zealand.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Nicaragua.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Niger.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Nigeria.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Niue.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/North Macedonia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Northern Cyprus.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Northern Ireland.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Norway.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Oman.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Pakistan.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Palau.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Palestine.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Panama.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Papua New Guinea.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Paraguay.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Peru.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Philippines.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Pitcairn.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Poland.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Portugal.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Qatar.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Romania.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Russia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Rwanda.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Saint Helena.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Saint Kitts and Nevis.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Saint Lucia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Saint Vincent and the Grenadines.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Samoa.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/San Marino.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Sao Tome and Principe.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Saudi Arabia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Scotland.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Senegal.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Serbia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Seychelles.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Sierra Leone.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Singapore.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Sint Maarten (Dutch part).csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Slovakia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Slovenia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Solomon Islands.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Somalia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/South Africa.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/South Korea.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/South Sudan.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Spain.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Sri Lanka.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Sudan.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Suriname.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Sweden.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Switzerland.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Syria.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Taiwan.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Tajikistan.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Tanzania.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Thailand.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Timor.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Togo.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Tokelau.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Tonga.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Trinidad and Tobago.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Tunisia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Turkey.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Turkmenistan.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Turks and Caicos Islands.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Tuvalu.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Uganda.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Ukraine.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/United Arab Emirates.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/United Kingdom.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/United States.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Uruguay.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Uzbekistan.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Vanuatu.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Venezuela.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Vietnam.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Wales.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Wallis and Futuna.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Yemen.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Zambia.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/country_data/Zimbabwe.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/locations-age.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/locations-manufacturer.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/locations.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/us_state_vaccinations.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/vaccinations-by-age-group.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/vaccinations-by-manufacturer.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/vaccinations.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/vaccinations/vaccinations.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DataVisualisation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DataVisualisation.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+    <list default="true" id="53cdb0bc-3666-4943-b813-30fc96cd8d82" name="Changes" comment="progress on lab 3">
+      <change afterPath="$PROJECT_DIR$/Lab 3/CovMap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 3/gdp_perCapita.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 3/owid-covid-latest.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 2/Exercise 22.html" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 2/Exercise 22.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 3/CovLine.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/CovLine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 3/LoadData.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/LoadData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 3/VaccBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/VaccBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 3/VaccMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/VaccMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 3/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 3/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -331,7 +96,9 @@
       <workItem from="1646222917128" duration="3642000" />
       <workItem from="1646389854572" duration="7107000" />
       <workItem from="1646662251335" duration="78620000" />
-      <workItem from="1647253974917" duration="3411000" />
+      <workItem from="1647253974917" duration="14655000" />
+      <workItem from="1647280034439" duration="4370000" />
+      <workItem from="1647439305935" duration="16447000" />
     </task>
     <task id="LOCAL-00001" summary="Start on Lab 2">
       <created>1645523684855</created>
@@ -361,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645783928604</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="progress on lab 3">
+      <created>1647257466092</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1647257466093</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -386,7 +160,8 @@
     <MESSAGE value="Start on Lab 2" />
     <MESSAGE value="Progress on Lab 2" />
     <MESSAGE value="Finished Lab 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished Lab 2" />
+    <MESSAGE value="progress on lab 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="progress on lab 3" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

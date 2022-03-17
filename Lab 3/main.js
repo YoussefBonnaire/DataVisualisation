@@ -2,7 +2,10 @@ const width_map = 700;
 const height_map = 350;
 const width_line = 700;
 const height_line = 350;
-margin = 20
+margin = 20;
+
+const xMax = width_line - margin * 2;
+const yMax = height_line - margin;
 
 const startdate = '2022-02-22'
 // Variable to get values
@@ -78,28 +81,6 @@ let country_dataless = getMap();
 
 Countries = getCountries(vaccdat, country_dataless, startdate)
 
-//
-// // Svg next to map to display country info
-// const tablesvg = d3.select('body')
-//     .append('svg')
-//     .attr('width', 150)
-//     .attr('height', height_map)
-
-function populateTable(event) {
-    var tr = tablesvg.selectAll('tr')
-        .data(event.originalTarget.__data__.properties)
-        .enter()
-        .append('tr')
-    var td = tr.selectAll('td')
-        .data(function (d) {
-            return Object.values(d);
-        })
-        .enter().append("td")
-        .text(function (d) {
-            return d;
-        });
-}
-
 // Draw map
 DrawMap();
 
@@ -113,6 +94,7 @@ dropdownButton.on("change", function () {
     var selectedOption = d3.select(this).property("value")
     // run the updateChart function with this selected option
     UpdateMap((chosen_value(selectedOption)), slider.value())
+    UpdateChart(selectedOption, slider.value())
 })
 var slider = d3
     .sliderVertical()
@@ -124,6 +106,7 @@ var slider = d3
     .height(height_map - 40)
     .on('onchange', (val) => {
         UpdateMap((chosen_value(dropdownButton.property('value'))), val)
+        UpdateChart((dropdownButton.property('value')), val)
     })
     .fill('black');
 map_svg.append('g')
@@ -137,6 +120,83 @@ d3.select('.myslider')
     .selectAll('text')
     .attr('opacity', 0.6)
 
+
+bar_svg = d3.select('body')
+    .append('svg').attr('class', 'bar_svg')
+    .attr('width', width_line)
+    .attr('height', height_line)
+    .attr('style', 'outline: thin solid rgba(98, 29, 29, 0.97);');
+bar_svg
+    .append("rect")
+    .attr("width", "0%")
+    .attr("height", "0%")
+    .transition()
+    .duration(1000)
+    .attr("width", "100%")
+    .attr("height", "100%")
+    .attr("fill", "rgba(130,202,241,0.97)")
+bar_svg
+    .append("g")
+    .attr("transform", "translate(" + margin + "," + margin + ")");
+
+x_axis = bar_svg.append("g")
+    .attr('class', 'chartxaxis')
+    .attr("transform", "translate(40," + yMax + ")")
+
+y_axis = bar_svg.append("g")
+    .attr('class', 'chartyaxis')
+    .attr("transform", "translate(40,0)")
+showBarChart();
+
+d3.select('body').append('div')
+const dropdownvalues_cov = ['tot_cases', 'tot_deaths', 'vaccines'];
+dropdownlist_cov = ['Total Cases by % of population', 'Total Deaths by % of population', 'Vaccines']
+// Initialize the button
+var dropdownCov = d3.select("body")
+    .append('select').attr('transform', 'translate(0,0)')
+// add the options to the button
+dropdownCov // Add a button
+    .selectAll('myOptions')
+    .data(dropdownlist_cov)
+    .enter()
+    .append('option')
+    .text(function (d) {
+        return d;
+    }) // text showed in the menu
+    .attr("value", function (d, i) {
+        return dropdownvalues_cov[i];
+    }) // corresponding value returned by the button
+// Added to ensure drop down is above map
+d3.select('body').append('div')
+// Select svg in main
+const covmap_svg = d3.select('body')
+    .append('svg')
+    .attr('class', 'cov_map')
+    .attr('width', width_map)
+    .attr('height', height_map)
+    .attr('style', 'outline: thin solid rgba(98, 29, 29, 0.97);');
+
+
+covmap_svg.append("rect")
+    .attr("width", "0%")
+    .attr("height", "0%")
+    .transition()
+    .duration(1000)
+    .attr("width", "100%")
+    .attr("height", "100%")
+    .attr("fill", "rgba(130,202,241,0.97)")
+
+
+// Append graph containing all elements of the map
+const cov_g = covmap_svg.append('g');
+
+// Enable zooming within the svg
+covmap_svg.call(d3.zoom().on('zoom', (event) => {
+    cov_g.attr('transform', event.transform);
+
+}));
+
+DrawCovMap();
 
 line_svg = d3.select('body')
     .append('svg').attr('class', 'line_svg')
@@ -154,7 +214,17 @@ line_svg
     .attr("fill", "rgba(130,202,241,0.97)")
 line_svg
     .append("g")
-    .attr("transform", "translate(" + margin + "," + margin + ")");
+    .attr("transform", "translate(" + (margin + 20) + "," + margin + ")");
+
+x_axis_line = line_svg.append("g")
+    .attr('class', 'chartxaxis')
+    .attr("transform", "translate(60," + yMax + ")")
+
+y_axis_line = line_svg.append("g")
+    .attr('class', 'chartyaxis')
+    .attr("transform", "translate(60,0)")
+y_axis_line_deaths = line_svg.append("g")
+    .attr('class', 'chartyaxis')
+    .attr("transform", "translate(" + (xMax) + ",0)")
 
 showLineGraph();
-showBarChart();
