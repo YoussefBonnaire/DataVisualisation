@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53cdb0bc-3666-4943-b813-30fc96cd8d82" name="Changes" comment="progress on lab 3">
-      <change afterPath="$PROJECT_DIR$/Lab 3/CovMap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/gdp_perCapita.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/owid-covid-latest.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab 2/Exercise 22.html" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 2/Exercise 22.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab 3/CovLine.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/CovLine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 3/CovMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/CovMap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab 3/LoadData.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/LoadData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab 3/VaccBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/VaccBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab 3/VaccMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/VaccMap.js" afterDir="false" />
@@ -98,7 +95,7 @@
       <workItem from="1646662251335" duration="78620000" />
       <workItem from="1647253974917" duration="14655000" />
       <workItem from="1647280034439" duration="4370000" />
-      <workItem from="1647439305935" duration="16447000" />
+      <workItem from="1647439305935" duration="48237000" />
     </task>
     <task id="LOCAL-00001" summary="Start on Lab 2">
       <created>1645523684855</created>
@@ -135,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647257466093</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="progress on lab 3">
+      <created>1647511181517</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1647511181518</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
