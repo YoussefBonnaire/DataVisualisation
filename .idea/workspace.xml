@@ -1,15 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53cdb0bc-3666-4943-b813-30fc96cd8d82" name="Changes" comment="progress on lab 3">
+    <list default="true" id="53cdb0bc-3666-4943-b813-30fc96cd8d82" name="Changes" comment="Late update on Lab 4">
+      <change afterPath="$PROJECT_DIR$/Lab 3/F21DV_Report_Lab3.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 3/H00389369_Lab3.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 3/Standard Declaration of Student Authorship -HWU.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/Coin_circulation.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/Line.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/LoadData_Lab4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/Race.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_ADAUSDT_d.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_BNBUSDT_d.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_BTCUSDT_d.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_BTTUSDT_d.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_DASHUSDT_d.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_DOGEUSDT_d.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_EOSUSDT_d.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_ETCUSDT_d.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_ETHUSDT_d.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_LINKUSDT_d.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_LTCUSDT_d.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_NEOUSDT_d.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_QTUMUSDT_d.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_TRXUSDT_d.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_XLMUSDT_d.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_XMRUSDT_d.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_XRPUSDT_d.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_ZECUSDT_d.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab 3/CovLine.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/CovLine.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab 3/CovMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/CovMap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab 3/LoadData.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/LoadData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab 3/VaccBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/VaccBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab 3/VaccMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/VaccMap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab 3/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab 3/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 3/VaccRace.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/VaccRace.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 3/test.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +87,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="code.cleanup.on.save" value="true" />
+    <property name="js.last.introduce.type" value="LET" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -95,7 +119,12 @@
       <workItem from="1646662251335" duration="78620000" />
       <workItem from="1647253974917" duration="14655000" />
       <workItem from="1647280034439" duration="4370000" />
-      <workItem from="1647439305935" duration="48237000" />
+      <workItem from="1647439305935" duration="49811000" />
+      <workItem from="1647609756095" duration="3533000" />
+      <workItem from="1648320543752" duration="1118000" />
+      <workItem from="1649332193186" duration="1000" />
+      <workItem from="1649340042072" duration="118000" />
+      <workItem from="1649340173569" duration="13369000" />
     </task>
     <task id="LOCAL-00001" summary="Start on Lab 2">
       <created>1645523684855</created>
@@ -139,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647511181518</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Final update, commenting and finishing touches">
+      <created>1647598756742</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1647598756742</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,7 +201,9 @@
     <MESSAGE value="Progress on Lab 2" />
     <MESSAGE value="Finished Lab 2" />
     <MESSAGE value="progress on lab 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="progress on lab 3" />
+    <MESSAGE value="Final update, commenting and finishing touches" />
+    <MESSAGE value="Late update on Lab 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Late update on Lab 4" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

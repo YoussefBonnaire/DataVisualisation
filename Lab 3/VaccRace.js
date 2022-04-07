@@ -3,7 +3,7 @@ file_name_json = 'vaccinations/vaccinations.json'
 formatDate = d3.timeFormat("%Y-%b-%d")
 
 
-vaccines = d3.csv(file_name_csv, function (d) {
+vaccines = d3.csv(file_name_csv, function(d) {
     return {
         date: new Date(d.date),
         iso_code: d.iso_code,
@@ -27,12 +27,12 @@ dates = vaccinationsData.then(data =>
             (d) => d.country
         )
     )
-        .map(([date, data]) => [new Date(date), data])
-        .sort(([a], [b]) => d3.ascending(a, b)))
+    .map(([date, data]) => [new Date(date), data])
+    .sort(([a], [b]) => d3.ascending(a, b)))
 console.log(dates)
 
 function rank(value) {
-    const data = names.then(name_data => Array.from(name_data, name => ({name, value: value(name)})));
+    const data = names.then(name_data => Array.from(name_data, name => ({ name, value: value(name) })));
     result = data.then(data => {
         data.sort((a, b) => d3.descending(a.value, b.value));
         for (let i = 0; i < data.length; ++i)
@@ -47,7 +47,10 @@ k = 5
 const keyframes = [];
 var key = dates.then(data => {
     let ka, a, kb, b;
-    for ([[ka, a], [kb, b]] of d3.pairs(data)) {
+    for ([
+            [ka, a],
+            [kb, b]
+        ] of d3.pairs(data)) {
         for (let i = 0; i < k; ++i) {
             const t = i / k;
             keyframes.push([
@@ -60,5 +63,3 @@ var key = dates.then(data => {
     return keyframes
 })
 console.log(key)
-
-

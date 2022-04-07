@@ -107,7 +107,7 @@ function DrawCovMap() {
                 });
             // Add legend block
             cov_g.append('rect')
-                .attr('class', 'color-rect')
+                .attr('class', 'color-rect_2')
                 .attr('x', 20)
                 .attr('width', width_map - 80)
                 .attr('y', height_map - 25)
@@ -118,7 +118,7 @@ function DrawCovMap() {
             // Add color axis
             axis = d3.axisBottom(x_cov).ticks(10)
             cov_g.append("g")
-                .attr('class', 'Xaxis')
+                .attr('class', 'Xaxis_2')
                 .attr("transform", "translate(0," + (height_map - 25) + ")")
                 .call(axis)
 
