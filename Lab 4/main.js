@@ -236,4 +236,4 @@ trades_svg.append('text')
     .style("font-size", "18px")
     .text("On the: " + formatDate_data(slider_.value()) + " ")
 
-showPie();
+ShowTrades();

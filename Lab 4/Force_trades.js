@@ -1,4 +1,4 @@
-function showPie() {
+function ShowTrades() {
     data_byDate.then(data => {
         let trade_data = data[min_date];
         trade_data.sort((a, b) => d3.descending(a.tradecount, b.tradecount))

@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53cdb0bc-3666-4943-b813-30fc96cd8d82" name="Changes" comment="Late update on Lab 4">
-      <change afterPath="$PROJECT_DIR$/Lab 4/Force_trades.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/Force_volume.js" afterDir="false" />
+    <list default="true" id="53cdb0bc-3666-4943-b813-30fc96cd8d82" name="Changes" comment="Update on Lab 4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab 3/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab 4/Line.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 4/Line.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab 4/LoadData_Lab4.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 4/LoadData_Lab4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab 4/Race.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 4/Race.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 4/Force_trades.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 4/Force_trades.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab 4/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 4/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab 4/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 4/main.js" afterDir="false" />
     </list>
@@ -107,7 +102,8 @@
       <workItem from="1648320543752" duration="1118000" />
       <workItem from="1649332193186" duration="1000" />
       <workItem from="1649340042072" duration="118000" />
-      <workItem from="1649340173569" duration="33349000" />
+      <workItem from="1649340173569" duration="35355000" />
+      <workItem from="1649428401039" duration="5750000" />
     </task>
     <task id="LOCAL-00001" summary="Start on Lab 2">
       <created>1645523684855</created>
@@ -165,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649357179194</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Update on Lab 4">
+      <created>1649410978595</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1649410978595</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,7 +196,8 @@
     <MESSAGE value="progress on lab 3" />
     <MESSAGE value="Final update, commenting and finishing touches" />
     <MESSAGE value="Late update on Lab 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Late update on Lab 4" />
+    <MESSAGE value="Update on Lab 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update on Lab 4" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
