@@ -229,7 +229,7 @@ covmap_svg.call(d3.zoom().on('zoom', (event) => {
 DrawCovMap();
 
 // Add line graph svg
-line_svg = d3.select('body')
+const line_svg = d3.select('body')
     .append('svg').attr('class', 'line_svg')
     .attr('width', width_line)
     .attr('height', height_line)

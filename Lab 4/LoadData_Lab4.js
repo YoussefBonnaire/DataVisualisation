@@ -62,7 +62,7 @@ function dataByCoin() {
     function dataSelection(c) {
         return d => {
             return {
-                date: formatDate_data(new Date(d.date)),
+                date: d.date,
                 symbol: d.symbol,
                 value: d.high,
                 volume: +d["Volume USDT"],

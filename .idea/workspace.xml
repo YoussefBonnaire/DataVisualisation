@@ -2,37 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53cdb0bc-3666-4943-b813-30fc96cd8d82" name="Changes" comment="Late update on Lab 4">
-      <change afterPath="$PROJECT_DIR$/Lab 3/F21DV_Report_Lab3.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/H00389369_Lab3.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 3/Standard Declaration of Student Authorship -HWU.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/Coin_circulation.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/Line.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/LoadData_Lab4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/Race.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_ADAUSDT_d.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_BNBUSDT_d.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_BTCUSDT_d.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_BTTUSDT_d.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_DASHUSDT_d.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_DOGEUSDT_d.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_EOSUSDT_d.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_ETCUSDT_d.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_ETHUSDT_d.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_LINKUSDT_d.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_LTCUSDT_d.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_NEOUSDT_d.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_QTUMUSDT_d.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_TRXUSDT_d.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_XLMUSDT_d.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_XMRUSDT_d.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_XRPUSDT_d.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/data/Binance_ZECUSDT_d.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 4/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/Force_trades.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab 4/Force_volume.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab 3/CovMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/CovMap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab 3/VaccRace.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/VaccRace.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab 3/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 3/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 4/Line.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 4/Line.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 4/LoadData_Lab4.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 4/LoadData_Lab4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 4/Race.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 4/Race.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 4/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 4/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 4/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 4/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -97,6 +75,11 @@
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\youss\OneDrive\Documents\Education\DVA\lab1\DataVisualisation\Lab 4" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -124,7 +107,7 @@
       <workItem from="1648320543752" duration="1118000" />
       <workItem from="1649332193186" duration="1000" />
       <workItem from="1649340042072" duration="118000" />
-      <workItem from="1649340173569" duration="13369000" />
+      <workItem from="1649340173569" duration="33349000" />
     </task>
     <task id="LOCAL-00001" summary="Start on Lab 2">
       <created>1645523684855</created>
@@ -175,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647598756742</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Late update on Lab 4">
+      <created>1649357179194</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1649357179194</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
